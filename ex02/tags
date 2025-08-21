@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/helfatih/Documents/Cpp_days/ex02/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC = c++$/;"	m
+MAX_SIZE	phonebook.hpp	/^#define MAX_SIZE /;"	d
+NAME	Makefile	/^NAME = cpp$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+PHONEBOOK_HPP	phonebook.hpp	/^#define  PHONEBOOK_HPP$/;"	d
+PhoneBook	test.cpp	/^class PhoneBook$/;"	c	file:
+PhoneBook	test2.cpp	/^class PhoneBook$/;"	c	file:
+Phonebook	phonebook.hpp	/^class Phonebook$/;"	c
+SRC	Makefile	/^SRC = main.cpp$/;"	m
+add_contact	main.cpp	/^void  Phonebook::add_contact()$/;"	f	class:Phonebook	typeref:typename:void
+all	Makefile	/^all: $(NAME)$/;"	t
+arr	test2.cpp	/^    string arr[8];$/;"	m	class:PhoneBook	typeref:typename:string[8]	file:
+array_contact	phonebook.hpp	/^    contacte  array_contact[MAX_SIZE];$/;"	m	class:Phonebook	typeref:typename:contacte[]
+clean	Makefile	/^clean:$/;"	t
+contacte	phonebook.hpp	/^class contacte$/;"	c
+counter	phonebook.hpp	/^    int counter;$/;"	m	class:Phonebook	typeref:typename:int
+fclean	Makefile	/^fclean: clean$/;"	t
+fill_contact	test2.cpp	/^    void  fill_contact(string number)$/;"	f	class:PhoneBook	typeref:typename:void	file:
+first_name	phonebook.hpp	/^    string  first_name;$/;"	m	class:contacte	typeref:typename:string
+fun	test.cpp	/^  void  fun(std::string &phone)$/;"	f	class:PhoneBook	typeref:typename:void	file:
+get_value	test.cpp	/^  std::string  get_value()$/;"	f	class:PhoneBook	typeref:typename:std::string	file:
+i	test2.cpp	/^    int i;$/;"	m	class:PhoneBook	typeref:typename:int	file:
+index	phonebook.hpp	/^    int index;$/;"	m	class:Phonebook	typeref:typename:int
+last_name	phonebook.hpp	/^    string  last_name;$/;"	m	class:contacte	typeref:typename:string
+main	main.cpp	/^int main ()$/;"	f	typeref:typename:int
+main	test.cpp	/^int main(void)$/;"	f	typeref:typename:int
+main	test2.cpp	/^int main (int argc, char *argv[])$/;"	f	typeref:typename:int
+make_conversation	main.cpp	/^void  make_conversation()$/;"	f	typeref:typename:void
+phone_number	phonebook.hpp	/^    string  phone_number;$/;"	m	class:contacte	typeref:typename:string
+phone_number_validation	main.cpp	/^bool  contacte::phone_number_validation(string &number)$/;"	f	class:contacte	typeref:typename:bool
+re	Makefile	/^re: fclean all$/;"	t
+set_contact_info	main.cpp	/^void  contacte::set_contact_info()$/;"	f	class:contacte	typeref:typename:void
+set_value	test2.cpp	/^    void  set_value(int j)$/;"	f	class:PhoneBook	typeref:typename:void	file:
+x	test.cpp	/^    std::string x;$/;"	m	class:PhoneBook	typeref:typename:std::string	file:
+y	test.cpp	/^    std::string y;$/;"	m	class:PhoneBook	typeref:typename:std::string	file:
