@@ -5,22 +5,24 @@
 #define MAX_SIZE 8
 
 #include <iostream>
-using   namespace std;
+#include <limits.h>
 
 class contacte
 {
   private:
-    string  first_name;
-    string  last_name;
-    string  nickname;
-    string  phone_number;
-  bool  phone_number_validation(string  &number);
+    std::string  first_name;
+    std::string  last_name;
+    std::string  nickname;
+    std::string  darkest_secret;
+    std::string  phone_number;
+  bool  phone_number_validation(std::string  &number);
 
   public:
     void  set_contact_info();
-    string  get_first_name();
-    string  get_last_name();
-    void  display_contact();
+    std::string  get_first_name();
+    std::string  get_last_name();
+    void  display_contact(int id);
+    void  display_users_info(int i);
 };
 
 class Phonebook
@@ -36,7 +38,7 @@ class Phonebook
     }
     void  add_contact();
     void  search_book();
-    void  display_contacts();
+    void  specifier_index(int id);
 };
 
 #endif // !PHONEBOOK

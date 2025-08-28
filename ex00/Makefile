@@ -1,9 +1,9 @@
 NAME = cpp
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
-SRC = main.cpp
+SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp

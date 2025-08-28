@@ -4,7 +4,7 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/helfatih/Documents/Cpp_days/ex02/	//
+!_TAG_PROC_CWD	/home/helfatih/Documents/Cpp_days/ex01/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
@@ -18,6 +18,7 @@ OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
 PHONEBOOK_HPP	phonebook.hpp	/^#define  PHONEBOOK_HPP$/;"	d
 PhoneBook	test.cpp	/^class PhoneBook$/;"	c	file:
 PhoneBook	test2.cpp	/^class PhoneBook$/;"	c	file:
+Phonebook	phonebook.hpp	/^    Phonebook() {$/;"	f	class:Phonebook
 Phonebook	phonebook.hpp	/^class Phonebook$/;"	c
 SRC	Makefile	/^SRC = main.cpp$/;"	m
 add_contact	main.cpp	/^void  Phonebook::add_contact()$/;"	f	class:Phonebook	typeref:typename:void
@@ -27,22 +28,32 @@ array_contact	phonebook.hpp	/^    contacte  array_contact[MAX_SIZE];$/;"	m	class
 clean	Makefile	/^clean:$/;"	t
 contacte	phonebook.hpp	/^class contacte$/;"	c
 counter	phonebook.hpp	/^    int counter;$/;"	m	class:Phonebook	typeref:typename:int
+darkest_secret	phonebook.hpp	/^    std::string  darkest_secret;$/;"	m	class:contacte	typeref:typename:std::string
+display_contact	main.cpp	/^void contacte::display_contact(int id)$/;"	f	class:contacte	typeref:typename:void
+display_user_id	main.cpp	/^void  display_user_id()$/;"	f	typeref:typename:void
+display_users_info	main.cpp	/^void contacte::display_users_info(int i)$/;"	f	class:contacte	typeref:typename:void
 fclean	Makefile	/^fclean: clean$/;"	t
 fill_contact	test2.cpp	/^    void  fill_contact(string number)$/;"	f	class:PhoneBook	typeref:typename:void	file:
-first_name	phonebook.hpp	/^    string  first_name;$/;"	m	class:contacte	typeref:typename:string
+first_name	phonebook.hpp	/^    std::string  first_name;$/;"	m	class:contacte	typeref:typename:std::string
+ft_atoi	main.cpp	/^int ft_atoi(std::string str)$/;"	f	typeref:typename:int
 fun	test.cpp	/^  void  fun(std::string &phone)$/;"	f	class:PhoneBook	typeref:typename:void	file:
 get_value	test.cpp	/^  std::string  get_value()$/;"	f	class:PhoneBook	typeref:typename:std::string	file:
 i	test2.cpp	/^    int i;$/;"	m	class:PhoneBook	typeref:typename:int	file:
 index	phonebook.hpp	/^    int index;$/;"	m	class:Phonebook	typeref:typename:int
-last_name	phonebook.hpp	/^    string  last_name;$/;"	m	class:contacte	typeref:typename:string
+last_name	phonebook.hpp	/^    std::string  last_name;$/;"	m	class:contacte	typeref:typename:std::string
 main	main.cpp	/^int main ()$/;"	f	typeref:typename:int
 main	test.cpp	/^int main(void)$/;"	f	typeref:typename:int
 main	test2.cpp	/^int main (int argc, char *argv[])$/;"	f	typeref:typename:int
 make_conversation	main.cpp	/^void  make_conversation()$/;"	f	typeref:typename:void
-phone_number	phonebook.hpp	/^    string  phone_number;$/;"	m	class:contacte	typeref:typename:string
-phone_number_validation	main.cpp	/^bool  contacte::phone_number_validation(string &number)$/;"	f	class:contacte	typeref:typename:bool
+nickname	phonebook.hpp	/^    std::string  nickname;$/;"	m	class:contacte	typeref:typename:std::string
+phone_number	phonebook.hpp	/^    std::string  phone_number;$/;"	m	class:contacte	typeref:typename:std::string
+phone_number_validation	main.cpp	/^bool  contacte::phone_number_validation(std::string &number)$/;"	f	class:contacte	typeref:typename:bool
 re	Makefile	/^re: fclean all$/;"	t
+s1	main.cpp	/^Phonebook s1;$/;"	v	typeref:typename:Phonebook
+search_book	main.cpp	/^void  Phonebook::search_book()$/;"	f	class:Phonebook	typeref:typename:void
 set_contact_info	main.cpp	/^void  contacte::set_contact_info()$/;"	f	class:contacte	typeref:typename:void
 set_value	test2.cpp	/^    void  set_value(int j)$/;"	f	class:PhoneBook	typeref:typename:void	file:
+specifier_index	main.cpp	/^void  Phonebook::specifier_index(int id)$/;"	f	class:Phonebook	typeref:typename:void
+string_validation	main.cpp	/^int string_validation(std::string str)$/;"	f	typeref:typename:int
 x	test.cpp	/^    std::string x;$/;"	m	class:PhoneBook	typeref:typename:std::string	file:
 y	test.cpp	/^    std::string y;$/;"	m	class:PhoneBook	typeref:typename:std::string	file:
