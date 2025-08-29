@@ -109,43 +109,7 @@ void  Phonebook::add_contact()
   counter++;
 }
 
-void contacte::display_contact(int id)
-{
-  std::cout << "\033[1;36m" << "╔═════════════════════════════════════╗" << "\033[0m" << std::endl;
-  std::cout << "\033[1;36m" << "║            CONTACT DETAILS          ║" << "\033[0m" << std::endl;
-  std::cout << "\033[1;36m" << "╠═════════════════════════════════════╣" << "\033[0m" << std::endl;
-  std::cout << "\033[1;33m" << "║ index  : " << "\033[1;37m"  << id << "\033[1;39m" << std::endl;
-  std::cout << "\033[1;33m" << "║ First name  : " << "\033[1;37m"  << first_name << "\033[1;39m" << std::endl;
-  std::cout << "\033[1;33m" << "║ Last name   : " << "\033[1;37m"  << last_name  << "\033[1;39m" << std::endl;
-  std::cout << "\033[1;33m" << "║ Nickname    : " << "\033[1;37m"  << nickname   << "\033[1;39m"  << std::endl;
-  std::cout << "\033[1;33m" << "║ Phone number: " << "\033[1;37m"  << phone_number << "\033[1;39m" << std::endl;
-  std::cout << "\033[1;33m" << "║ Darkest_secret: " << "\033[1;37m"  << darkest_secret << "\033[1;39m" << std::endl;
-  std::cout << "\033[1;36m" << "╚═════════════════════════════════════╝" << "\033[0m" << "\033[1;39m" << std::endl;
-  std::cout << std::endl;
-}
-
-void contacte::display_users_info(int i)
-{
-  std::string str = std::to_string(i);
-  std::cout << str.substr(0, 10) << " | ";
-  if (first_name.size() >= 10)
-  {
-    std::cout << first_name.substr(0, 9) << "." << " | ";
-  }
-  else
-    std::cout << first_name.substr(0, 10) << " | ";
-  if (last_name.size() >= 10)
-    std::cout << last_name.substr(0, 9) << "." << " | ";
-  else
-    std::cout << last_name.substr(0, 10) << " | ";
-  if (nickname.size() >= 10)
-    std::cout << nickname.substr(0, 9) << "." << " | ";
-  else
-    std::cout << nickname.substr(0, 10);
-  std::cout << std::endl;
-}
-
-int ft_atoi(std::string str)
+long ft_atoi(std::string str)
 {
   int i;
   long  res;
@@ -202,27 +166,6 @@ void  Phonebook::specifier_index(int id)
   if (i == counter)
     std::cout << "this index " << id << " not found !" << std::endl;
 }
-
-void  display_user_id()
-{
-  int id;
-  std::string convert;
-
-  std::cout << "Enter the number of index : ";
-  if (!getline(std::cin, convert))
-  {
-      std::cout <<  "\033[1;36m" << "EOF detected. Exiting..." << std::endl;
-      exit(0);
-  }
-  if (string_validation(convert))
-    display_user_id();
-  id = ft_atoi(convert);
-  if (id == -1)
-    display_user_id();
-  s1.specifier_index(id);
-}
-
-
 
 void  Phonebook::search_book()
 {

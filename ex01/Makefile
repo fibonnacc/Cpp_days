@@ -3,7 +3,7 @@ NAME = cpp
 CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 
-SRC = main.cpp
+SRC = main.cpp	printing_user_info.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp

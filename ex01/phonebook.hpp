@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <limits.h>
+#include <iomanip>
 
 class contacte
 {
@@ -40,5 +41,12 @@ class Phonebook
     void  search_book();
     void  specifier_index(int id);
 };
+
+
+extern  Phonebook s1;
+
+long ft_atoi(std::string str);
+int string_validation(std::string str);
+void  display_user_id();
 
 #endif // !PHONEBOOK
