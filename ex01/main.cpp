@@ -105,8 +105,9 @@ void  contacte::set_contact_info()
 void  Phonebook::add_contact()
 {
   array_contact[index].set_contact_info();
-  index = (index + 1) % MAX_SIZE; 
-  counter++;
+  index = (index + 1) % MAX_SIZE;
+  if (counter < MAX_SIZE)
+    counter++;
 }
 
 long ft_atoi(std::string str)
@@ -175,6 +176,8 @@ void  Phonebook::search_book()
     std::cout << "Phonebook is empty" << std::endl;
     return;
   }
+
+  display_header_row();
   for (i = 0; i < counter; i++)
   {
     array_contact[i].display_users_info(i);

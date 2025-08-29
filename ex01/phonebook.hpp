@@ -45,6 +45,7 @@ class Phonebook
 
 extern  Phonebook s1;
 
+void  display_header_row();
 long ft_atoi(std::string str);
 int string_validation(std::string str);
 void  display_user_id();
