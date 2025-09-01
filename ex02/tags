@@ -1,0 +1,68 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/helfatih/Documents/Cpp_days/ex02/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+Account	Account.cpp	/^Account::Account( int initial_deposit )$/;"	f	class:Account
+Account	Account.hpp	/^class Account {$/;"	c
+CC	Makefile	/^CC = c++$/;"	m
+NAME	Makefile	/^NAME = cpp$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+SRC	Makefile	/^SRC = Account.cpp tests.cpp$/;"	m
+__ACCOUNT_H__	Account.hpp	/^#define __ACCOUNT_H__$/;"	d
+_accountIndex	Account.hpp	/^	int				_accountIndex;$/;"	m	class:Account	typeref:typename:int
+_amount	Account.hpp	/^	int				_amount;$/;"	m	class:Account	typeref:typename:int
+_displayTimestamp	Account.cpp	/^void Account::_displayTimestamp(void) {$/;"	f	class:Account	typeref:typename:void
+_nbAccounts	Account.cpp	/^int	Account::_nbAccounts = 0;$/;"	m	class:Account	typeref:typename:int
+_nbAccounts	Account.hpp	/^	static int	_nbAccounts;$/;"	m	class:Account	typeref:typename:int
+_nbDeposits	Account.hpp	/^	int				_nbDeposits;$/;"	m	class:Account	typeref:typename:int
+_nbWithdrawals	Account.hpp	/^	int				_nbWithdrawals;$/;"	m	class:Account	typeref:typename:int
+_totalAmount	Account.cpp	/^int	Account::_totalAmount = 0;$/;"	m	class:Account	typeref:typename:int
+_totalAmount	Account.hpp	/^	static int	_totalAmount;$/;"	m	class:Account	typeref:typename:int
+_totalNbDeposits	Account.cpp	/^int	Account::_totalNbDeposits = 0;$/;"	m	class:Account	typeref:typename:int
+_totalNbDeposits	Account.hpp	/^	static int	_totalNbDeposits;$/;"	m	class:Account	typeref:typename:int
+_totalNbWithdrawals	Account.cpp	/^int	Account::_totalNbWithdrawals = 0;$/;"	m	class:Account	typeref:typename:int
+_totalNbWithdrawals	Account.hpp	/^	static int	_totalNbWithdrawals;$/;"	m	class:Account	typeref:typename:int
+acc_int_t	tests.cpp	/^	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;$/;"	t	function:main	typeref:typename:std::pair<accounts_t::iterator,ints_t::iterator>	file:
+accounts_t	tests.cpp	/^	typedef std::vector<Account::t>							  accounts_t;$/;"	t	function:main	typeref:typename:std::vector<Account::t>	file:
+all	Makefile	/^all: $(NAME)$/;"	t
+checkAmount	Account.cpp	/^int Account::checkAmount(void) const {$/;"	f	class:Account	typeref:typename:int
+clean	Makefile	/^clean:$/;"	t
+displayAccountsInfos	Account.cpp	/^void Account::displayAccountsInfos(void) {$/;"	f	class:Account	typeref:typename:void
+displayStatus	Account.cpp	/^void Account::displayStatus(void) const$/;"	f	class:Account	typeref:typename:void
+fclean	Makefile	/^fclean: clean$/;"	t
+getNbAccounts	Account.cpp	/^int Account::getNbAccounts()$/;"	f	class:Account	typeref:typename:int
+getNbDeposits	Account.cpp	/^int Account::getNbDeposits()$/;"	f	class:Account	typeref:typename:int
+getNbWithdrawals	Account.cpp	/^int Account::getNbWithdrawals()$/;"	f	class:Account	typeref:typename:int
+getTotalAmount	Account.cpp	/^int Account::getTotalAmount()$/;"	f	class:Account	typeref:typename:int
+get_value	main.cpp	/^    int get_value()$/;"	f	class:key	typeref:typename:int	file:
+get_value	this.cpp	/^    int get_value()$/;"	f	class:key	typeref:typename:int	file:
+get_value	this.cpp	/^    int get_value()$/;"	f	class:key1	typeref:typename:int	file:
+ints_t	tests.cpp	/^	typedef std::vector<int>								  ints_t;$/;"	t	function:main	typeref:typename:std::vector<int>	file:
+key	main.cpp	/^class key$/;"	c	file:
+key	this.cpp	/^    key()$/;"	f	class:key	file:
+key	this.cpp	/^    key()$/;"	f	class:key1	file:
+key	this.cpp	/^class key$/;"	c	file:
+key	this.cpp	/^key::key(int speed)$/;"	f	class:key
+key1	this.cpp	/^class key1$/;"	c	file:
+main	main.cpp	/^int main (int argc, char *argv[])$/;"	f	typeref:typename:int
+main	tests.cpp	/^int		main( void ) {$/;"	f	typeref:typename:int
+main	this.cpp	/^int main (int argc, char *argv[])$/;"	f	typeref:typename:int
+makeDeposit	Account.cpp	/^void	Account::makeDeposit( int deposit )$/;"	f	class:Account	typeref:typename:void
+makeWithdrawal	Account.cpp	/^bool Account::makeWithdrawal(int withdrawal) {$/;"	f	class:Account	typeref:typename:bool
+re	Makefile	/^re: fclean all$/;"	t
+set_value	this.cpp	/^    void set_value(int speed)$/;"	f	class:key	typeref:typename:void	file:
+speed	main.cpp	/^    static int speed;$/;"	m	class:key	typeref:typename:int	file:
+speed	main.cpp	/^int key::speed = 100;$/;"	m	class:key	typeref:typename:int
+speed	this.cpp	/^    int speed;$/;"	m	class:key	typeref:typename:int	file:
+speed	this.cpp	/^    int speed;$/;"	m	class:key1	typeref:typename:int	file:
+t	Account.hpp	/^	typedef Account		t;$/;"	t	class:Account	typeref:typename:Account
+~Account	Account.cpp	/^Account::~Account()$/;"	f	class:Account
