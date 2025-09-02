@@ -38,7 +38,7 @@ void contacte::display_users_info(int i)
   std::cout << std::endl;
 }
 
-void  display_user_id()
+bool  display_user_id()
 {
   int id;
   std::string convert;
@@ -47,7 +47,7 @@ void  display_user_id()
   if (!getline(std::cin, convert))
   {
       std::cout <<  "\033[1;36m" << "EOF detected. Exiting..." << std::endl;
-      exit(0);
+      return (false);
   }
   if (string_validation(convert))
     display_user_id();
@@ -55,4 +55,5 @@ void  display_user_id()
   if (id == -1)
     display_user_id();
   s1.specifier_index(id);
+  return(true);
 }

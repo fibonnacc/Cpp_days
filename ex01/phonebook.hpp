@@ -38,7 +38,7 @@ class Phonebook
         index = 0;
     }
     void  add_contact();
-    void  search_book();
+    int  search_book();
     void  specifier_index(int id);
 };
 
@@ -48,6 +48,6 @@ extern  Phonebook s1;
 void  display_header_row();
 long ft_atoi(std::string str);
 int string_validation(std::string str);
-void  display_user_id();
+bool  display_user_id();
 
 #endif // !PHONEBOOK

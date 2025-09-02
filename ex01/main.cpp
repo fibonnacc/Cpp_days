@@ -168,13 +168,13 @@ void  Phonebook::specifier_index(int id)
     std::cout << "this index " << id << " not found !" << std::endl;
 }
 
-void  Phonebook::search_book()
+int  Phonebook::search_book()
 {
   int i;
   if (counter == 0)
   {
     std::cout << "Phonebook is empty" << std::endl;
-    return;
+    return (1);
   }
 
   display_header_row();
@@ -184,8 +184,10 @@ void  Phonebook::search_book()
   }
   if (i == counter)
   {
-    display_user_id();
+    if (!display_user_id())
+      return (0);
   }
+  return (1);
 }
 
 void  make_conversation()
@@ -202,7 +204,8 @@ void  make_conversation()
     }
     else if (command == "SEARCH")
     {
-      s1.search_book();
+      if (!s1.search_book())
+        return;
     }
     else if (command == "EXIT")
     {
