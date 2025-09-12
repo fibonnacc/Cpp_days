@@ -6,19 +6,23 @@ void  replace_function(char **arr, std::ifstream &in_file, std::ofstream &out_fi
   std::string line;
   std::string s1 = arr[2];
   std::string s2 = arr[3];
-  int start_pos = 0;
   
   while (getline(in_file, line))
   {
-    while ((start_pos = line.find(s1, 0)) != std::string::npos)
+    size_t start_pos = 0;
+    while ((start_pos = line.find(s1, start_pos)) != std::string::npos)
     {
       line = line.substr(0, start_pos) + s2 + line.substr(start_pos + s1.length());
+      start_pos += s2.length();
     }
+
+    // if ((start_pos = line.find(s1, start_pos)) == -1)
+    std::cout << start_pos << "Yap find fail here" << std::endl;
     out_file << line;
-    if (!in_file.eof())
-      break;
   }
   out_file << std::endl;
+  in_file.close();
+  out_file.close();
 }
 
 void  open_and_read(char **arr)
