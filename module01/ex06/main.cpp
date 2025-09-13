@@ -1,0 +1,12 @@
+#include "Harl.hpp"
+
+int main (int argc, char **argv)
+{
+  if (argc != 2)
+  {
+    return (1);
+  }
+  Harl s1;
+  s1.complain(argv[1]);
+  return 0;
+}
