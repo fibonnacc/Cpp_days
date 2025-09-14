@@ -5,6 +5,11 @@ Zombie::Zombie(std::string name)
     this->name = name;
 }
 
+Zombie::~Zombie()
+{
+  std::cout << "Zombie " << name << " is destroyed" << std::endl;
+}
+
 int main ()
 {
   Zombie s1;
@@ -19,6 +24,6 @@ int main ()
   Zombie *z = newZombie(first_name);
   z->announce();
   delete z;
-  std::cout << "Zombie " << first_name << " is destroyed" << std::endl;
+  // std::cout << "Zombie " << first_name << " is destroyed" << std::endl;
   return 0;
 }

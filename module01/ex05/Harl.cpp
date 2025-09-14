@@ -23,8 +23,8 @@ void  Harl::error()
 void  Harl::complain(std::string level)
 {
   Harl obj;
-  void  (Harl::*fun_pointer[4])(void) = {&Harl::error, &Harl::warning, &Harl::info, &Harl::debug};
-  std::string arr[4] = {"WARNING", "ERROR", "DEBUG", "INFO"};
+  void  (Harl::*fun_pointer[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+  std::string arr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
   
   for (size_t i = 0; i < 4; i++)
   {
