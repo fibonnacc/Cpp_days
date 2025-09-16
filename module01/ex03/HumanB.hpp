@@ -10,7 +10,7 @@ private:
   std::string name;
   Weapon *weapon;
 public:
-  HumanB(std::string value) : name(value)
+  HumanB(std::string value)
   {
     name = value;
     weapon = NULL;

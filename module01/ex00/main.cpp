@@ -24,6 +24,5 @@ int main ()
   Zombie *z = newZombie(first_name);
   z->announce();
   delete z;
-  // std::cout << "Zombie " << first_name << " is destroyed" << std::endl;
   return 0;
 }

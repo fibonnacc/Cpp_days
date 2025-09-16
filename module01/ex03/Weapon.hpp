@@ -12,7 +12,7 @@ public:
   {
     type = str;
   }
-  std::string getType();
+  const std::string &getType();
   void  setType(std::string str);
 };
 
