@@ -3,5 +3,6 @@
 
 void  HumanA::attack()
 {
-  std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+  const std::string& weaponType = weapon.getType();
+  std::cout << name << " attacks with their " << weaponType << std::endl;
 }

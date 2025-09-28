@@ -12,17 +12,14 @@ Zombie::~Zombie()
 
 int main ()
 {
-  Zombie s1;
   std::string first_name;
   std::cout << "Enter the name : ";
   if (!getline(std::cin, first_name))
   {
     return (1);
   }
-  s1.randomChump(first_name);
-  s1.announce();
+  randomChump(first_name);
   Zombie *z = newZombie(first_name);
-  z->announce();
   delete z;
   return 0;
 }

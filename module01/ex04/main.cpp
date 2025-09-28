@@ -6,19 +6,22 @@ void  replace_function(char **arr, std::ifstream &in_file, std::ofstream &out_fi
   std::string line;
   std::string s1 = arr[2];
   std::string s2 = arr[3];
+  std::string before;
+  std::string after;
   
   while (std::getline(in_file, line))
   {
     size_t start_pos = 0;
     while ((start_pos = line.find(s1, start_pos)) != std::string::npos)
     {
-      line = line.substr(0, start_pos) + s2 + line.substr(start_pos + s1.length());
-      std::cout << "the value is : " << start_pos << " " << line[start_pos] << std::endl; 
+      before = line.substr(0, start_pos);
+      after = line.substr(start_pos + s1.length());
+      line = before + s2 + after;
       start_pos += s2.length();
     }
     out_file << line;
+    out_file << std::endl;
   }
-  out_file << std::endl;
 }
 
 void  open_and_read(char **arr)

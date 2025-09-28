@@ -12,19 +12,9 @@ class Zombie
     std::string name;
   public:
     void announce();
-  Zombie()
-  {
-    name = "Unamed";
-    N = 0;
-  }
-  void   set_Zombie(std::string name)
-  {
-    this->name = name;
-  }
-  ~Zombie()
-  {
-    std::cout << name << " : " << "is destroyed" << std::endl;
-  }
+  Zombie();
+  void   set_Zombie(std::string name);
+  ~Zombie();
 };
 
 Zombie* zombieHorde( int N, std::string name);

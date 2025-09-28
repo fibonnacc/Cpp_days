@@ -10,15 +10,8 @@ private:
   std::string name;
   Weapon *weapon;
 public:
-  HumanB(std::string value)
-  {
-    name = value;
-    weapon = NULL;
-  }
-  void setWeapon(Weapon &obj)
-  {
-    weapon = &obj;
-  }
+  HumanB(std::string value);
+  void setWeapon(Weapon &obj);
   void  attack();
 };
 
