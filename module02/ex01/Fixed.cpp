@@ -32,6 +32,29 @@ int Fixed::getRawBits( void ) const
   return (fixed_point);
 }
 
+
+Fixed::Fixed(const int integer_value)
+{
+  fixed_point = integer_value << fractional_bit;
+}
+
+Fixed::Fixed(const float float_value)
+{
+  fixed_point = (int)(float_value * (1 << fractional_bit));
+}
+
+int Fixed::toInt( void ) const
+{
+  std::cout << "toInt is called" << std::endl;
+  return (fixed_point << fractional_bit);
+}
+
+float Fixed::toFloat( void ) const
+{
+  std::cout << "toFloat is called" << std::endl;
+  return ((float)fixed_point / (1 << fractional_bit));
+}
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;

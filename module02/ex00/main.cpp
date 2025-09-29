@@ -1,18 +1,14 @@
-#include <iostream>
-#include <fstream>
+#include "Fixed.hpp"
 
-std::ostream &cout = std::cout;
-
-int main (int argc, char *argv[])
+int main( void )
 {
-  float x = 0.1f + 0.2f;
-  float y = 0.3f;
-  if (x == y)
-  {
-    cout << "x and y both equal!" << std::endl;
-  }
-  else {
-    cout << "x and y are not equal" << std::endl;
-  }
-  return 0;
+  Fixed a;
+  a.setRawBits(9.737373);
+  Fixed b( a );
+  Fixed c;
+  c = b;
+  std::cout << a.getRawBits() << std::endl;
+  std::cout << b.getRawBits() << std::endl;
+  std::cout << c.getRawBits() << std::endl;
+  return (0);
 }
