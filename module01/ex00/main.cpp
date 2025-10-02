@@ -18,8 +18,8 @@ int main ()
   {
     return (1);
   }
-  randomChump(first_name);
   Zombie *z = newZombie(first_name);
+  randomChump(first_name);
   delete z;
   return 0;
 }
