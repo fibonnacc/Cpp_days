@@ -2,7 +2,7 @@
 
 std::ostream& operator<<(std::ostream& out, const Fixed& s1)
 {
-  out << s1.toFloat();
+  out << s1.toFloat(); 
   return (out);
 }
 
@@ -18,7 +18,7 @@ Fixed::Fixed(const Fixed &other)
   *this = other;
 }
 
-Fixed& Fixed:: operator=(const Fixed& other)
+Fixed& Fixed::operator=(const Fixed& other)
 {
   std::cout << "Copy assignment operator called" << std::endl;
   if (this != &other)
@@ -52,17 +52,15 @@ Fixed::Fixed(const float float_value)
 
 int Fixed::toInt( void ) const
 {
-  // std::cout << "toInt is called" << std::endl;
   return (fixed_point >> fractional_bit);
 }
 
 float Fixed::toFloat( void ) const
 {
-  // std::cout << "toFloat is called" << std::endl;
   return static_cast<float>(fixed_point) / (1 << fractional_bit);
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+  std::cout << "Destructor called" << std::endl;
 }

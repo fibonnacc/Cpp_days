@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/helfatih/Documents/Cpp_days/module02/ex03/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC = c++$/;"	m
+FIXED_HPP	Fixed.hpp	/^#define FIXED_HPP$/;"	d
+Fixed	Fixed.cpp	/^Fixed::Fixed()$/;"	f	class:Fixed
+Fixed	Fixed.cpp	/^Fixed::Fixed(const Fixed &other)$/;"	f	class:Fixed
+Fixed	Fixed.cpp	/^Fixed::Fixed(const float float_value)$/;"	f	class:Fixed
+Fixed	Fixed.cpp	/^Fixed::Fixed(const int integer_value)$/;"	f	class:Fixed
+Fixed	Fixed.hpp	/^class Fixed$/;"	c
+HICHAM_EL_FATIHI	Point.hpp	/^#define HICHAM_EL_FATIHI$/;"	d
+NAME	Makefile	/^NAME = cpp$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+Point	Point.cpp	/^Point::Point() : x(0), y(0)$/;"	f	class:Point
+Point	Point.cpp	/^Point::Point(const Point& other) : x(other.x), y(other.y)$/;"	f	class:Point
+Point	Point.cpp	/^Point::Point(const float fp1, const float fp2): x(fp1), y(fp2)$/;"	f	class:Point
+Point	Point.hpp	/^class Point $/;"	c
+SRC	Makefile	/^SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp$/;"	m
+all	Makefile	/^all: $(NAME)$/;"	t
+bsp	bsp.cpp	/^bool bsp(Point A, Point B, Point C, Point P)$/;"	f	typeref:typename:bool
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+fixed_point	Fixed.hpp	/^  int fixed_point;$/;"	m	class:Fixed	typeref:typename:int
+fractional_bit	Fixed.hpp	/^  static const int fractional_bit = 8; $/;"	m	class:Fixed	typeref:typename:const int
+getRawBits	Fixed.cpp	/^int Fixed::getRawBits( void ) const$/;"	f	class:Fixed	typeref:typename:int
+get_x_value	Point.cpp	/^Fixed const Point::get_x_value()$/;"	f	class:Point	typeref:typename:Fixed const
+get_y_value	Point.cpp	/^Fixed const Point::get_y_value()$/;"	f	class:Point	typeref:typename:Fixed const
+main	main.cpp	/^int	main()$/;"	f	typeref:typename:int
+max	Fixed.cpp	/^Fixed& Fixed::max(Fixed& a, Fixed& b)$/;"	f	class:Fixed	typeref:typename:Fixed &
+max	Fixed.cpp	/^const Fixed& Fixed::max(const Fixed& a, const Fixed& b)$/;"	f	class:Fixed	typeref:typename:const Fixed &
+min	Fixed.cpp	/^Fixed& Fixed::min(Fixed& a, Fixed& b)$/;"	f	class:Fixed	typeref:typename:Fixed &
+min	Fixed.cpp	/^const Fixed& Fixed::min(const Fixed& a, const Fixed& b)$/;"	f	class:Fixed	typeref:typename:const Fixed &
+operator !=	Fixed.cpp	/^bool Fixed::operator!=(const Fixed& other) const$/;"	f	class:Fixed	typeref:typename:bool
+operator *	Fixed.cpp	/^Fixed Fixed::operator*(Fixed const &other) const$/;"	f	class:Fixed	typeref:typename:Fixed
+operator +	Fixed.cpp	/^Fixed Fixed::operator+(Fixed const &other) const$/;"	f	class:Fixed	typeref:typename:Fixed
+operator ++	Fixed.cpp	/^Fixed Fixed::operator++(int)$/;"	f	class:Fixed	typeref:typename:Fixed
+operator ++	Fixed.cpp	/^Fixed& Fixed::operator++()$/;"	f	class:Fixed	typeref:typename:Fixed &
+operator -	Fixed.cpp	/^Fixed Fixed::operator-(Fixed const &other) const$/;"	f	class:Fixed	typeref:typename:Fixed
+operator --	Fixed.cpp	/^Fixed Fixed::operator--(int)$/;"	f	class:Fixed	typeref:typename:Fixed
+operator --	Fixed.cpp	/^Fixed& Fixed::operator--()$/;"	f	class:Fixed	typeref:typename:Fixed &
+operator /	Fixed.cpp	/^Fixed Fixed::operator\/(Fixed const &other) const$/;"	f	class:Fixed	typeref:typename:Fixed
+operator <	Fixed.cpp	/^bool Fixed::operator<(const Fixed& other) const$/;"	f	class:Fixed	typeref:typename:bool
+operator <<	Fixed.cpp	/^std::ostream& operator<<(std::ostream& out, const Fixed& s1)$/;"	f	typeref:typename:std::ostream &
+operator <=	Fixed.cpp	/^bool Fixed::operator<=(const Fixed& other) const$/;"	f	class:Fixed	typeref:typename:bool
+operator =	Fixed.cpp	/^Fixed& Fixed::operator=(const Fixed& other)$/;"	f	class:Fixed	typeref:typename:Fixed &
+operator ==	Fixed.cpp	/^bool Fixed::operator==(const Fixed& other) const$/;"	f	class:Fixed	typeref:typename:bool
+operator >	Fixed.cpp	/^bool Fixed::operator>(const Fixed& other) const$/;"	f	class:Fixed	typeref:typename:bool
+operator >=	Fixed.cpp	/^bool Fixed::operator>=(const Fixed& other) const$/;"	f	class:Fixed	typeref:typename:bool
+re	Makefile	/^re: fclean all$/;"	t
+setRawBits	Fixed.cpp	/^void Fixed::setRawBits( int const raw )$/;"	f	class:Fixed	typeref:typename:void
+toFloat	Fixed.cpp	/^float Fixed::toFloat( void ) const$/;"	f	class:Fixed	typeref:typename:float
+toInt	Fixed.cpp	/^int Fixed::toInt( void ) const$/;"	f	class:Fixed	typeref:typename:int
+x	Point.hpp	/^  Fixed const x;$/;"	m	class:Point	typeref:typename:Fixed const
+y	Point.hpp	/^  Fixed const y;$/;"	m	class:Point	typeref:typename:Fixed const
+~Fixed	Fixed.cpp	/^Fixed::~Fixed()$/;"	f	class:Fixed
+~Point	Point.cpp	/^Point::~Point()$/;"	f	class:Point
