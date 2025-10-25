@@ -4,12 +4,13 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 public:
   FragTrap();
   FragTrap(std::string str);
-  void attack(const std::string& Target);
+  FragTrap(const FragTrap& other);
+  FragTrap& operator=(const FragTrap& other);
   void highFivesGuys(void);
   ~FragTrap();
 };

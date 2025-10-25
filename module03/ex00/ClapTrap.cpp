@@ -1,14 +1,13 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() : Hit_point(10), Energie(10), attack_damage(0)
+{
+  std::cout << "ClapTrap Default Constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string str) : name(str), Hit_point(10), Energie(10), attack_damage(0) 
 {
-  std::cout << "\n[----------- ClapTrap info ------------]" << std::endl;
-  std::cout << "[Name : " << name << "]" << std::endl;
-  std::cout << "[Energie : " << Energie << "]" <<  std::endl;
-  std::cout << "[Hit_point : " << Hit_point << "]" << std::endl;
-  std::cout << "[attack_damage : " << attack_damage << "]" << std::endl;
-  std::cout << "[----------- ************** ------------]" << std::endl;
-  std::cout << "\n";
+  std::cout << "ClapTrap " << this->name << " is created" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -18,9 +17,13 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-  this->Hit_point = other.Hit_point;
-  this->Energie = other.Energie;
-  this->attack_damage = other.attack_damage;
+  if (this != &other)
+  {
+    this->name = other.name;
+    this->Hit_point = other.Hit_point;
+    this->Energie = other.Energie;
+    this->attack_damage = other.attack_damage;
+  }
   return *this;
 }
 
@@ -44,7 +47,7 @@ void ClapTrap::takeDamage(unsigned int amount)
   else
     this->Hit_point -= amount;
 
-  std::cout << " ClapTrap " << this->name << "took " << amount << "point of damage !"
+  std::cout << "ClapTrap " << this->name << " took " << amount << " point of damage !"
   << "Remainig HP : " << this->Hit_point << std::endl; 
 
   if (Hit_point == 0)

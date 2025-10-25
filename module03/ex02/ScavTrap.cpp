@@ -8,6 +8,22 @@ ScavTrap::ScavTrap()
   this->set_attack_Damage(20);
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
+{
+  *this = other;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+  if (this != &other)
+  {
+    this->set_name(other.get_name());
+    this->set_HitPoint(other.get_HitPoint());
+    this->set_Energie(other.get_Energie());
+    this->set_attack_Damage(other.get_attack_Damage());
+  }
+  return (*this);
+}
 ScavTrap::ScavTrap(std::string str)
 {
   std::cout << "ScavTrap " << str << " is created" << std::endl;
@@ -25,7 +41,7 @@ void ScavTrap::attack(const std::string& Target)
     return;
   }
   this->set_Energie(get_Energie() - 1);
-  std::cout << "ScavTrap " << this->get_name() << " attack " << Target << " causing, " << this->get_attack_Damge()
+  std::cout << "ScavTrap " << this->get_name() << " attack " << Target << " causing, " << this->get_attack_Damage()
             << " point of damage!" << std::endl;
 }
 

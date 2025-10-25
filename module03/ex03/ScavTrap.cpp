@@ -25,10 +25,12 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-  // this->name = other.name;
   if (this != &other)
   {
-    ClapTrap::operator=(other); 
+    this->set_name(other.get_name());
+    this->set_HitPoint(other.get_HitPoint());
+    this->set_Energie(other.get_Energie());
+    this->set_attack_Damage(other.get_attack_Damage());
   }
   return (*this);
 }

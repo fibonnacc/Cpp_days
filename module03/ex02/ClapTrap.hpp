@@ -29,7 +29,7 @@ public:
   std::string get_name() const;
   int get_HitPoint() const;
   int get_Energie() const;
-  int get_attack_Damge() const;
+  int get_attack_Damage() const;
 
   ~ClapTrap();
 };

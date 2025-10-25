@@ -4,7 +4,10 @@
 int main()
 {
     ScavTrap st("Hicham");
-    st.attack("enemy");
+    ClapTrap d1("said");
+    st.attack("said");
+    st.takeDamage(4);
+    st.beRepaired(5);
     st.guardGate();
     return 0;
 }

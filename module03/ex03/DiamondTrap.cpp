@@ -3,10 +3,10 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name), name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
   std::cout << "DiamondTrap " << this->name << " is created" << std::endl;
-  ClapTrap::set_name(name + "_clap_name");
+  this->name = ClapTrap::get_name();
   this->set_HitPoint(FragTrap::get_HitPoint());
   this->set_Energie(ScavTrap::get_Energie());
   this->set_attack_Damage(FragTrap::get_attack_Damage());
@@ -19,10 +19,13 @@ DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), FragTrap(o
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 {
-  this->name = other.name;
-  this->set_HitPoint(other.get_HitPoint());
-  this->set_Energie(other.get_Energie());
-  this->set_attack_Damage(other.get_attack_Damage());
+  if (this != &other)
+  {
+    this->name = other.name;
+    this->set_HitPoint(other.get_HitPoint());
+    this->set_Energie(other.get_Energie());
+    this->set_attack_Damage(other.get_attack_Damage());
+  }
   return (*this);
 }
 

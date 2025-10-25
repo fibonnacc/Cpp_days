@@ -2,21 +2,18 @@
 
 ClapTrap::ClapTrap()
 {
-  std::cout << "ClapTrap default constructor called " << std::endl;
+  std::cout << "ClapTrap constructor called " << std::endl;
   this->set_HitPoint(10);
   this->set_Energie(10);
   this->set_attack_Damage(0);
 }
 
-ClapTrap::ClapTrap(std::string str) : name(str), Hit_point(10), Energie(10), attack_damage(0) 
+ClapTrap::ClapTrap(std::string str)
 {
-  std::cout << "\n[----------- ClapTrap info ------------]" << std::endl;
-  std::cout << "[Name : " << name << "]" << std::endl;
-  std::cout << "[Energie : " << Energie << "]" <<  std::endl;
-  std::cout << "[Hit_point : " << Hit_point << "]" << std::endl;
-  std::cout << "[attack_damage : " << attack_damage << "]" << std::endl;
-  std::cout << "[----------- ************** ------------]" << std::endl;
-  std::cout << "\n";
+  this->name = str;
+  this->Hit_point = 10;
+  this->Energie = 10;
+  this->attack_damage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -52,8 +49,8 @@ void ClapTrap::takeDamage(unsigned int amount)
   else
     this->Hit_point -= amount;
 
-  std::cout << " ClapTrap " << this->name << "took " << amount << "point of damage !"
-  << "Remainig HP : " << this->Hit_point << std::endl; 
+  std::cout << "ClapTrap " << this->name << " took " << amount << " point of damage !"
+  << " Remainig HP : " << this->Hit_point << std::endl; 
 
   if (Hit_point == 0)
   {

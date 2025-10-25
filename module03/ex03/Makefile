@@ -1,5 +1,5 @@
 NAME = cpp
-CC = c++
+CC = g++
 FLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp

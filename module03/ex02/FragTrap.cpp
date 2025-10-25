@@ -1,5 +1,5 @@
 #include "FragTrap.hpp"
-// #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 FragTrap::FragTrap()
 {
@@ -18,16 +18,21 @@ FragTrap::FragTrap(std::string str)
   this->set_attack_Damage(30);
 }
 
-void FragTrap::attack(const std::string& Target)
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
-  if (this->get_Energie() < 1)
+  *this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& other)
+{
+  if (this != &other)
   {
-    std::cout << "FragTrap " << this->get_name() << " has no energy left and can't attack!" << std::endl;
-    return;
+    this->set_name(other.get_name());
+    this->set_Energie(other.get_Energie());
+    this->set_HitPoint(other.get_HitPoint());
+    this->set_attack_Damage(other.get_attack_Damage());
   }
-  this->set_Energie(get_Energie() - 1);
-  std::cout << "FragTrap " << this->get_name() << " attack " << Target << " causing, " << this->get_attack_Damge()
-            << " point of damage!" << std::endl;
+  return (*this);
 }
 
 void FragTrap::highFivesGuys(void)
