@@ -25,7 +25,9 @@ int main()
   obj1->plus_idea("that was amazing");
   obj1->plus_idea("by the way my name hicham");
 
+  std::cout << "idea : " << obj1->getIdea(0) << std::endl;
   std::cout << "idea : " << obj1->getIdea(1) << std::endl;
+  std::cout << "idea : " << obj1->getIdea(2) << std::endl;
   
   for (size_t i = 0; i < 50; i++) {
     delete arr[i];

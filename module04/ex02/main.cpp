@@ -6,7 +6,7 @@
 int main()
 {
   Animal* arr[50];
-  Brain* obj1;
+  std::string str;
 
   for (int i = 0; i < 50; i++) {
     if (i % 2 == 0)
@@ -15,14 +15,24 @@ int main()
         arr[i] = new Cat();
   }
 
-  obj1 = arr[3]->get_Brain();
-  obj1->plus_idea("i am so hungry");
-  obj1->plus_idea("that was amazing");
-  obj1->plus_idea("by the way my name hicham");
-
-  std::cout << "this is the idea of animal 3 : " << arr[3]->get_Brain()->getIdea(1) << std::endl;
+  for (int i = 0; i < 50; i++) {
+    std::cout << "Enter an idea, (you can break the loop by empty string!) : ";
+    if (!std::getline(std::cin, str))
+      break;
+    if (str == "")
+      break;
+    arr[i]->get_Brain()->plus_idea(str);
+  }
   
   for (size_t i = 0; i < 50; i++) {
+    Brain* brain = arr[i]->get_Brain();
+    for (size_t j = 0; j < 50; j++) {
+      std::string idea = brain->getIdea(j);
+      if (idea == "")
+        break;
+      else
+        std::cout << "the idea N* " << i << " : " << idea << std::endl; 
+    }
     delete arr[i];
   }
 }

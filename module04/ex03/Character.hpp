@@ -9,6 +9,12 @@ class Character : publice ICharacter
 private:
   std::string _name;
   AMateria* _inventory[4];
+
+  struct Node {
+    AMateria* _materia;
+    Node* next;
+    Node(AMateria* m);
+  };
 public:
   Character();
   Character(std::string name);
