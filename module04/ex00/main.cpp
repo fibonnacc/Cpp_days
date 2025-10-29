@@ -13,7 +13,7 @@ int main()
   std::cout << j->getType() << " " << std::endl;
   std::cout << i->getType() << " " << std::endl;
 
-  i->makeSound(); //will output the cat sound!
+  i->makeSound();
   j->makeSound();
   meta->makeSound();
 
@@ -26,7 +26,7 @@ int main()
   
   std::cout << wrongCat->getType() << std::endl;
   
-  wrongCat->makeSound(); // Will output WrongAnimal sound, NOT WrongCat!
+  wrongCat->makeSound();
   wrongMeta->makeSound();
   
   delete wrongMeta;

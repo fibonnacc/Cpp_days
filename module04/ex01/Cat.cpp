@@ -14,6 +14,9 @@ Cat& Cat::operator=(const Cat& other) {
   if (this != &other) {
     this->type = other.type;
     this->obj2 = new Brain();
+    for (size_t i = 0; i < 100; i++) {
+      this->obj2->plus_idea(other.obj2->getIdea(i));
+    }
   }
   return *this;
 }

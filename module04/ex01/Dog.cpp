@@ -15,6 +15,9 @@ Dog& Dog::operator=(const Dog& other) {
   if (this != &other) {
     this->type = other.type;
     this->obj1 = new Brain();
+    for (size_t i = 0; i < 100; i++) {
+      this->obj1->plus_idea(other.obj1->getIdea(i));
+    }
   }
   return *this;
 }

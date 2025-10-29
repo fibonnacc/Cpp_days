@@ -5,6 +5,7 @@
 
 int main()
 {
+  Animal a;
   Animal* arr[50];
   std::string str;
 

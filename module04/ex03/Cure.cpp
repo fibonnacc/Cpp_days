@@ -1,14 +1,16 @@
 #include "Cure.hpp"
 
 Cure::Cure() {
-  _type = "";
+  _type = "cure";
 }
 
-Cure::Cure(const Cure& other) {
+Cure::Cure(const Cure& other) : AMateria(other) {
   *this = other;
 }
 
-Cure::Cure& operator=(const Cure& other) {
+Cure& Cure::operator=(const Cure& other) {
+  if (this == &other)
+    return *this;
   this->_type = other._type;
   return *this;
 }
@@ -22,7 +24,7 @@ Cure::Cure(std::string const & type) {
 
 AMateria* Cure::clone() const {
   AMateria* tmp;
-  tmp = new AMateria();
+  tmp = new Cure();
   return tmp;
 }
 

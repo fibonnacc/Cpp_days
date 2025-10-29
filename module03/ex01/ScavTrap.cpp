@@ -55,3 +55,4 @@ ScavTrap::~ScavTrap()
 {
   std::cout << "ScavTrap " << get_name() << " is destroyed !" << std::endl;
 }
+
