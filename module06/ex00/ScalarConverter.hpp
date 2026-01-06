@@ -35,6 +35,11 @@ public:
   static bool  is_integer(const std::string& str);
   static bool  is_float(const std::string& str);
   static bool  is_double(const std::string& str);
+  static bool  detect_overlfow(const std::string& str);
+  static bool  check_pseudo(const std::string& str);
+  static bool  Print_Pseudo(int i);
+  static void  print_error();
+
 
   static void  conversion_char(const std::string& str);
   static void  conversion_float(const std::string& str);

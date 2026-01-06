@@ -19,6 +19,11 @@ int main (int ac, char **av) {
     return (1);
   }
   std::string str(av[1]);
+  if (str[0] == 0)
+  {
+    ScalarConverter::conversion_char(str);
+    return (1);
+  }
   ScalarConverter::convert(str);
   return 0;
 }

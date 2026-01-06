@@ -4,7 +4,7 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/helfatih/Documents/Module06/ex00/	//
+!_TAG_PROC_CWD	/home/helfatih/Documents/cpp/module06/ex00/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
@@ -20,7 +20,7 @@ COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
 NAME	Makefile	/^NAME = convert$/;"	m
 OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
 SCALARCONVERTER	ScalarConverter.hpp	/^#define SCALARCONVERTER$/;"	d
-SRC	Makefile	/^SRC = ScalarConverter.cpp main.cpp$/;"	m
+SRC	Makefile	/^SRC = ScalarConverter.cpp	main.cpp	identify_type.cpp$/;"	m
 ScalarConverter	ScalarConverter.cpp	/^ScalarConverter::ScalarConverter() {$/;"	f	class:ScalarConverter
 ScalarConverter	ScalarConverter.cpp	/^ScalarConverter::ScalarConverter(const ScalarConverter& thing) {$/;"	f	class:ScalarConverter
 ScalarConverter	ScalarConverter.hpp	/^class ScalarConverter {$/;"	c
@@ -33,10 +33,10 @@ conversion_integer	ScalarConverter.cpp	/^void  ScalarConverter::conversion_integ
 convert	ScalarConverter.cpp	/^void ScalarConverter::convert(std::string& literal) {$/;"	f	class:ScalarConverter	typeref:typename:void
 fclean	Makefile	/^fclean: clean$/;"	t
 identify_Type	ScalarConverter.cpp	/^void  ScalarConverter::identify_Type(std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:void
-is_char	ScalarConverter.cpp	/^bool  ScalarConverter::is_char(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
-is_double	ScalarConverter.cpp	/^bool  ScalarConverter::is_double(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
-is_float	ScalarConverter.cpp	/^bool  ScalarConverter::is_float(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
-is_integer	ScalarConverter.cpp	/^bool  ScalarConverter::is_integer(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
+is_char	identify_type.cpp	/^bool  ScalarConverter::is_char(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
+is_double	identify_type.cpp	/^bool  ScalarConverter::is_double(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
+is_float	identify_type.cpp	/^bool  ScalarConverter::is_float(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
+is_integer	identify_type.cpp	/^bool  ScalarConverter::is_integer(const std::string& str) {$/;"	f	class:ScalarConverter	typeref:typename:bool
 main	main.cpp	/^int main (int ac, char **av) {$/;"	f	typeref:typename:int
 operator =	ScalarConverter.cpp	/^ScalarConverter &ScalarConverter::operator=(const ScalarConverter& thing) {$/;"	f	class:ScalarConverter	typeref:typename:ScalarConverter &
 re	Makefile	/^re: fclean all$/;"	t

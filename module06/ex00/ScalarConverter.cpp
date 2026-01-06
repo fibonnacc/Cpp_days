@@ -11,58 +11,11 @@
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <cerrno>
+#include <limits>
+#include <cmath>
 
 // Methode //
-
-bool  ScalarConverter::is_char(const std::string& str) {
-  if (str.length() == 1) {
-    if (!isdigit(str[0]))
-        return (true);
-  }
-  return (false);
-}
-
-bool  ScalarConverter::is_float(const std::string& str) {
-  if (str.at(str.length() - 1) == 'f')
-  {
-    size_t i = 0;
-    if (str.at(0) == '-' || str.at(0) == '+')
-      ++i;
-    while (i < str.length() - 1 && (std::isdigit(str.at(i)) || str.at(i) == '.')) {
-      i++;
-    }
-    if (i == str.length() - 1)
-      return (true);
-  }
-  return (false);
-}
-
-bool  ScalarConverter::is_double(const std::string& str) {
-  if (str.find('.') != std::string::npos) {
-    size_t i = 0;
-    if (str.at(0) == '-' || str.at(0) == '+')
-      ++i;
-    while (i < str.length() && (std::isdigit(str.at(i)) || str.at(i) == '.')) {
-      i++;
-    }
-    if (i == str.length()) {
-      return (true);
-    }
-  }
-  return (false);
-}
-
-bool  ScalarConverter::is_integer(const std::string& str) {
-  size_t i = 0;
-  if (std::isdigit(str.at(0)) == '-' || std::isdigit(str.at(0)) == '+')
-    ++i;
-  while (std::isdigit(str.at(i)))
-    i++;
-  if (i == str.length()) {
-    return (true);
-  }
-  return (false);
-}
 
 void  ScalarConverter::conversion_char(const std::string& str) {
   std::cout << "char : " << str[0] << std::endl;
@@ -72,7 +25,7 @@ void  ScalarConverter::conversion_char(const std::string& str) {
 }
 
 void  ScalarConverter::conversion_float(const std::string& str) {
-  float number = atof(str.c_str());
+  float number = strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
     std::cout << "char : out of range" << std::endl;
   else if (number < 32 || number == 127)
@@ -85,7 +38,7 @@ void  ScalarConverter::conversion_float(const std::string& str) {
 }
 
 void  ScalarConverter::conversion_double(const std::string& str) {
-  float number = atof(str.c_str());
+  float number = std::strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
     std::cout << "char : out of range" << std::endl;
   else if (number < 32 || number == 127)
@@ -98,7 +51,7 @@ void  ScalarConverter::conversion_double(const std::string& str) {
 }
 
 void  ScalarConverter::conversion_integer(const std::string& str) {
-  int number = atoi(str.c_str());
+  int number = strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
     std::cout << "char : out of range" << std::endl;
   else if (number < 32 || number == 127)
@@ -110,32 +63,109 @@ void  ScalarConverter::conversion_integer(const std::string& str) {
   std::cout << "double : " << std::fixed << std::setprecision(2) << static_cast<double>(number) << std::endl; 
 }
 
+bool  ScalarConverter::detect_overlfow(const std::string& str) {
+  errno = 0;
+  double value = strtod(str.c_str(), 0);
+  
+  if (value > std::numeric_limits<int>::max()) {
+    std::cout << "overflow : Positive infinity" << std::endl;
+    return (true);
+  }
+
+  if (value < std::numeric_limits<int>::min()) {
+    std::cout << "overflow : Negative infinity" << std::endl;
+    return (true);
+  }
+
+  if (errno == ERANGE) {
+    if (value == HUGE_VAL) {
+      std::cout << "overflow : Positive infinity" << std::endl;
+      return (true);
+    }
+    if (value == -HUGE_VAL) {
+      std::cout << "overflow : Negative infinity" << std::endl;
+      return (true);
+    }
+  }
+  return (false);
+}
+
+void  ScalarConverter::print_error() {
+  std::cout << "char : impossible" << std::endl;
+  std::cout << "int : impossible" << std::endl;
+  std::cout << "float : impossible" << std::endl;
+  std::cout << "double : impossible" << std::endl;
+}
+
 void  ScalarConverter::identify_Type(std::string& str) {
   if (is_char(str)) {
     conversion_char(str);
   }
 
-  else if (is_float(str)) {
+  if (is_float(str)) {
     conversion_float(str);
   }
 
-  else if (is_double(str)) {
+  if (is_double(str)) {
     conversion_double(str);
   }
 
-  else if (is_integer(str)) {
+  if (is_integer(str)) {
+    if (detect_overlfow(str)) {
+      return ;
+    }
     conversion_integer(str);
   }
 
-
-  // else if (is_pseudo(str))
-
   else
-    std::cout << "UNKNOWN" << std::endl;
+    print_error();
+}
+
+bool  ScalarConverter::Print_Pseudo(int i) {
+  if (i == 3) {
+    return (false);
+  }
+  std::cout << "char : impossible" << std::endl;
+  std::cout << "int : impossible" << std::endl;
+  
+  switch (i) {
+    case 0:
+      std::cout << "float : -inff" << std::endl;
+      std::cout << "double : -inf" << std::endl;
+      break;
+    case 1:
+      std::cout << "float : +inff" << std::endl;
+      std::cout << "double : +inf" << std::endl;
+      break;
+    case 2:
+      std::cout << "float : nanf" << std::endl;
+      std::cout << "double : nan" << std::endl;
+      break;
+  }
+  return (true);
+}
+
+bool  ScalarConverter::check_pseudo(const std::string& str) {
+  std::string Pseudo1[3] = {"-inf", "+inf", "nan"};
+  std::string Pseudo2[3] = {"-inff", "+inff", "nanf"};
+  
+  int i = 0;
+  while (i < 3) {
+    if (str == Pseudo1[i] || str == Pseudo2[i]) {
+      break;
+    }
+    i++;
+  }
+  if (ScalarConverter::Print_Pseudo(i))
+    return (true);
+  return (false);
 }
 
 void ScalarConverter::convert(std::string& literal) {
-  identify_Type(literal);
+  if (ScalarConverter::check_pseudo(literal)) {
+    return ;
+  }
+  ScalarConverter::identify_Type(literal);
 }
 
 // Canonical Orthodox //

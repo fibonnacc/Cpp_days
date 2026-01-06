@@ -14,7 +14,7 @@ NAME = convert
 CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 
-SRC = ScalarConverter.cpp main.cpp
+SRC = ScalarConverter.cpp	main.cpp	identify_type.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Colors
