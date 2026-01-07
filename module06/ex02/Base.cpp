@@ -6,16 +6,17 @@
 Base *generate(void) {
   int random = rand() % 3;
 
-  if (random == 0) {
-    std::cout << "*Generated : A*" << std::endl;
-    return new A();
+  switch (random) {
+    case 0:
+      std::cout << "*Generated : A*" << std::endl;
+      return new A();
+    case 1:
+      std::cout << "*Generated : B*" << std::endl;
+      return new B();
+    default:
+      std::cout << "*Generated : C*" << std::endl;
+      return new C();
   }
-  if (random == 1) {
-    std::cout << "*Generated : B*" << std::endl;
-    return new B();
- }
-  std::cout << "*Generated : C*" << std::endl;
-  return new C();
 }
 
 void identify(Base* p) {
