@@ -25,40 +25,53 @@ void  ScalarConverter::conversion_char(const std::string& str) {
 }
 
 void  ScalarConverter::conversion_float(const std::string& str) {
-  float number = strtod(str.c_str(), 0);
+  double number = strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
     std::cout << "char : out of range" << std::endl;
   else if (number < 32 || number == 127)
     std::cout << "char : non-printable" << std::endl;
   else
     std::cout << "char : " << "'" << static_cast<char>(number) << "'" << std::endl;
-  std::cout << "int : " << static_cast<int>(number) << std::endl;
-  std::cout << "float : " << std::fixed << std::setprecision(2) << number << "f" << std::endl;
-  std::cout << "double : " << std::fixed << std::setprecision(2) << static_cast<double>(number) << std::endl;
+
+  if (detect_overlfow(str))
+    std::cout << "int : impossible" << std::endl;
+  else
+    std::cout << "int : " << static_cast<int>(number) << std::endl;
+
+  std::cout << "float : " << std::fixed << std::setprecision(2) << static_cast<float>(number) << "f" << std::endl;
+  std::cout << "double : " << std::fixed << std::setprecision(2) << number << std::endl;
 }
 
 void  ScalarConverter::conversion_double(const std::string& str) {
-  float number = std::strtod(str.c_str(), 0);
+  double number = std::strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
     std::cout << "char : out of range" << std::endl;
   else if (number < 32 || number == 127)
     std::cout << "char : non-printable" << std::endl;
   else
     std::cout << "char : " << "'" << static_cast<char>(number) << "'" << std::endl;
-  std::cout << "int : " << static_cast<int>(number) << std::endl;
-  std::cout << "float : " << std::fixed << std::setprecision(2) << number << "f" << std::endl;
-  std::cout << "double : " << std::fixed << std::setprecision(2) << static_cast<double>(number) << std::endl; 
+
+  if (detect_overlfow(str))
+    std::cout << "int : impossible" << std::endl;
+  else
+    std::cout << "int : " << static_cast<int>(number) << std::endl;
+
+  std::cout << "float : " << std::fixed << std::setprecision(2) << static_cast<float>(number) << "f" << std::endl;
+  std::cout << "double : " << std::fixed << std::setprecision(2) << number << std::endl; 
 }
 
 void  ScalarConverter::conversion_integer(const std::string& str) {
-  int number = strtod(str.c_str(), 0);
+  double number = strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
     std::cout << "char : out of range" << std::endl;
   else if (number < 32 || number == 127)
     std::cout << "char : non-printable" << std::endl;
   else
     std::cout << "char : " << "'" << static_cast<char>(number) << "'" << std::endl;
-  std::cout << "int : " << static_cast<int>(number) << std::endl;
+  if (detect_overlfow(str))
+    std::cout << "int : impossible" << std::endl;
+  else
+    std::cout << "int : " << static_cast<int>(number) << std::endl;
   std::cout << "float : " << std::fixed << std::setprecision(2) << static_cast<float>(number) << "f" << std::endl;
   std::cout << "double : " << std::fixed << std::setprecision(2) << static_cast<double>(number) << std::endl; 
 }
@@ -66,26 +79,13 @@ void  ScalarConverter::conversion_integer(const std::string& str) {
 bool  ScalarConverter::detect_overlfow(const std::string& str) {
   errno = 0;
   double value = strtod(str.c_str(), 0);
-  
+
   if (value > std::numeric_limits<int>::max()) {
-    std::cout << "overflow : Positive infinity" << std::endl;
     return (true);
   }
 
   if (value < std::numeric_limits<int>::min()) {
-    std::cout << "overflow : Negative infinity" << std::endl;
     return (true);
-  }
-
-  if (errno == ERANGE) {
-    if (value == HUGE_VAL) {
-      std::cout << "overflow : Positive infinity" << std::endl;
-      return (true);
-    }
-    if (value == -HUGE_VAL) {
-      std::cout << "overflow : Negative infinity" << std::endl;
-      return (true);
-    }
   }
   return (false);
 }
@@ -102,21 +102,20 @@ void  ScalarConverter::identify_Type(std::string& str) {
     conversion_char(str);
   }
 
-  if (is_float(str)) {
+  else if (is_float(str)) {
     conversion_float(str);
   }
 
-  if (is_double(str)) {
+  else if (is_double(str)) {
     conversion_double(str);
   }
 
-  if (is_integer(str)) {
+  else if (is_integer(str)) {
     if (detect_overlfow(str)) {
       return ;
     }
     conversion_integer(str);
   }
-
   else
     print_error();
 }

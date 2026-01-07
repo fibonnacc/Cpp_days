@@ -40,7 +40,7 @@ bool  ScalarConverter::is_double(const std::string& str) {
     size_t i = 0;
     if (str.at(0) == '-' || str.at(0) == '+')
       ++i;
-    while (i < str.length() && (std::isdigit(str.at(i)) || str.at(i) == '.')) {
+    while (i < str.length() && (std::isdigit(str[i]) || str[i] == '.')) {
       i++;
     }
     if (i == str.length()) {
