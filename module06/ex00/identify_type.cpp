@@ -47,6 +47,7 @@ bool  ScalarConverter::is_double(const std::string& str) {
       return (true);
     }
   }
+  std::cout << "hello this is the problem " << std::endl;
   return (false);
 }
 

@@ -6,7 +6,7 @@
 /*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:26:00 by helfatih          #+#    #+#             */
-/*   Updated: 2026/01/05 20:50:46 by helfatih         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:17:23 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-// #include <climits>
-// #include <limits.h>
-// #include <float.h>
 #include <cstdlib>
 
 

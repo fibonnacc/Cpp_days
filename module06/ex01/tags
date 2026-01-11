@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/helfatih/Documents/c_plus/module06/ex01/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC = c++$/;"	m
+COLOR_CYAN	Makefile	/^COLOR_CYAN = \\033[36m$/;"	m
+COLOR_GREEN	Makefile	/^COLOR_GREEN = \\033[32m$/;"	m
+COLOR_PURPLE	Makefile	/^COLOR_PURPLE = \\033[35m$/;"	m
+COLOR_RESET	Makefile	/^COLOR_RESET = \\033[0m$/;"	m
+COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
+DATA	Data.hpp	/^#define DATA$/;"	d
+Data	Data.cpp	/^Data::Data() : name("Hicham"), age(21), nickname("elfatihi") {$/;"	f	class:Data
+Data	Data.hpp	/^struct Data {$/;"	s
+NAME	Makefile	/^NAME = convert$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+SERIALIZER	Serializer.hpp	/^#define SERIALIZER$/;"	d
+SRC	Makefile	/^SRC = Serializer.cpp	main.cpp Data.cpp$/;"	m
+Serializer	Serializer.cpp	/^Serializer::Serializer() {$/;"	f	class:Serializer
+Serializer	Serializer.cpp	/^Serializer::Serializer(const Serializer &) {$/;"	f	class:Serializer
+Serializer	Serializer.hpp	/^class Serializer {$/;"	c
+age	Data.hpp	/^  int age;$/;"	m	struct:Data	typeref:typename:int
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+deserialize	Serializer.cpp	/^Data* Serializer::deserialize(uintptr_t raw) {$/;"	f	class:Serializer	typeref:typename:Data *
+fclean	Makefile	/^fclean: clean$/;"	t
+main	main.cpp	/^int main () {$/;"	f	typeref:typename:int
+name	Data.hpp	/^  std::string name;$/;"	m	struct:Data	typeref:typename:std::string
+nickname	Data.hpp	/^  std::string nickname;$/;"	m	struct:Data	typeref:typename:std::string
+operator =	Serializer.cpp	/^Serializer &Serializer::operator=(const Serializer &) {$/;"	f	class:Serializer	typeref:typename:Serializer &
+re	Makefile	/^re: fclean all$/;"	t
+serialize	Serializer.cpp	/^uintptr_t Serializer::serialize(Data* ptr) {$/;"	f	class:Serializer	typeref:typename:uintptr_t
+~Data	Data.cpp	/^Data::~Data(){$/;"	f	class:Data
+~Serializer	Serializer.cpp	/^Serializer::~Serializer() {$/;"	f	class:Serializer

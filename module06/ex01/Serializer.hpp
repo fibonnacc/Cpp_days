@@ -4,7 +4,6 @@
 #define SERIALIZER
 
 #include <iostream>
-struct Data;
 #include "Data.hpp"
 
 class Serializer {
@@ -16,7 +15,6 @@ public:
   Serializer(const Serializer &);
   Serializer &operator=(const Serializer &);
   ~Serializer();
-
 private:
 };
 

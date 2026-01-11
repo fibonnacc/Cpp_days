@@ -14,7 +14,7 @@ NAME = convert
 CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 
-SRC = Serializer.cpp	main.cpp
+SRC = Serializer.cpp	main.cpp Data.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Colors

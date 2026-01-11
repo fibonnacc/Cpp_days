@@ -27,7 +27,7 @@ void  ScalarConverter::conversion_char(const std::string& str) {
 void  ScalarConverter::conversion_float(const std::string& str) {
   double number = strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
-    std::cout << "char : out of range" << std::endl;
+    std::cout << "char : impossible" << std::endl;
   else if (number < 32 || number == 127)
     std::cout << "char : non-printable" << std::endl;
   else
@@ -45,7 +45,7 @@ void  ScalarConverter::conversion_float(const std::string& str) {
 void  ScalarConverter::conversion_double(const std::string& str) {
   double number = std::strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
-    std::cout << "char : out of range" << std::endl;
+    std::cout << "char : impossible" << std::endl;
   else if (number < 32 || number == 127)
     std::cout << "char : non-printable" << std::endl;
   else
@@ -55,7 +55,6 @@ void  ScalarConverter::conversion_double(const std::string& str) {
     std::cout << "int : impossible" << std::endl;
   else
     std::cout << "int : " << static_cast<int>(number) << std::endl;
-
   std::cout << "float : " << std::fixed << std::setprecision(2) << static_cast<float>(number) << "f" << std::endl;
   std::cout << "double : " << std::fixed << std::setprecision(2) << number << std::endl; 
 }
@@ -63,7 +62,7 @@ void  ScalarConverter::conversion_double(const std::string& str) {
 void  ScalarConverter::conversion_integer(const std::string& str) {
   double number = strtod(str.c_str(), 0);
   if (number < 0 || number > 127)
-    std::cout << "char : out of range" << std::endl;
+    std::cout << "char : impossible" << std::endl;
   else if (number < 32 || number == 127)
     std::cout << "char : non-printable" << std::endl;
   else
