@@ -6,7 +6,7 @@
 /*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:28:58 by helfatih          #+#    #+#             */
-/*   Updated: 2026/01/05 10:28:58 by helfatih         ###   ########.fr       */
+/*   Updated: 2026/01/11 22:29:58 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,23 @@ void  ScalarConverter::conversion_float(const std::string& str) {
   std::cout << "float : " << std::fixed << std::setprecision(2) << static_cast<float>(number) << "f" << std::endl;
   std::cout << "double : " << std::fixed << std::setprecision(2) << number << std::endl;
 }
+
+// #include <iostream>
+// #include <iomanip>
+// #include <bitset>
+
+// void print_double_binary(double d) {
+//     // 1. Take the address of the double (&d)
+//     // 2. Cast it to an unsigned long long pointer
+//     // 3. De-reference it to get the raw 64-bit integer
+//     unsigned long long bits = *reinterpret_cast<unsigned long long*>(&d);
+//
+//     std::cout << "Double value: " << d << std::endl;
+//
+//     std::bitset<64> binary(bits);
+//
+//     std::cout << "Binary: " << binary << std::endl;
+// }
 
 void  ScalarConverter::conversion_double(const std::string& str) {
   double number = std::strtod(str.c_str(), 0);
