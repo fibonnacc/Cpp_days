@@ -45,12 +45,14 @@ void  ScalarConverter::conversion_float(const std::string& str) {
 // #include <iostream>
 // #include <iomanip>
 // #include <bitset>
-
+//
 // void print_double_binary(double d) {
 //     // 1. Take the address of the double (&d)
 //     // 2. Cast it to an unsigned long long pointer
 //     // 3. De-reference it to get the raw 64-bit integer
-//     unsigned long long bits = *reinterpret_cast<unsigned long long*>(&d);
+//     unsigned long long bits = reinterpret_cast<unsigned long long>(d);
+//
+//     std::cout << bits << std::endl;
 //
 //     std::cout << "Double value: " << d << std::endl;
 //
