@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/17 11:37:47 by helfatih          #+#    #+#             */
+/*   Updated: 2026/01/17 11:37:47 by helfatih         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ARRAY_TPP
 #define ARRAY_TPP
 
@@ -26,10 +38,10 @@ Array<T>::Array(const Array<T>& other) : _element(NULL), _size(0) {
 }
 
 template <typename T>
-Array<T>& Array<T>::operator=(const Array<T>& other) {
+Array<T>& Array::operator=(const Array<T>& other) {
   if (this != &other) {
     if (this->_element)
-      delete[] this->_element;
+      delete [] this->_element;
 
     this->_size = other._size;
     if (this->_size > 0) {
@@ -37,7 +49,8 @@ Array<T>& Array<T>::operator=(const Array<T>& other) {
       for (unsigned int i = 0; i < this->_size; i++) {
         this->_element[i] = other._element[i];
       }
-    } else {
+    }
+    else {
       this->_element = NULL;
     }
   }
@@ -46,7 +59,7 @@ Array<T>& Array<T>::operator=(const Array<T>& other) {
 
 template <typename T>
 Array<T>::~Array() {
-  delete[] _element;
+  delete [] _element;
 }
 
 template <typename T>
