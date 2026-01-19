@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 11:37:52 by helfatih          #+#    #+#             */
-/*   Updated: 2026/01/17 11:37:52 by helfatih         ###   ########.fr       */
+/*   Created: 2026/01/18 18:37:51 by helfatih          #+#    #+#             */
+/*   Updated: 2026/01/18 18:37:53 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Array.hpp"
-#include "Array.tpp"
+// #include "Array.tpp"
 #include <cstdlib>
 
 #define MAX_VAL 750
