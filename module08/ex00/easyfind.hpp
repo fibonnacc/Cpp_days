@@ -28,7 +28,7 @@ void easyfind(T &container, int value) {
 
   while (it_begin != it_end) {
     if (*it_begin == value) {
-      std::cout << "the value is found inside the container : " << value << std::endl;
+      std::cout << "Match found: Value *" << value << "* is present in the container." << std::endl;
       break;
     }
     it_begin++;
@@ -37,4 +37,4 @@ void easyfind(T &container, int value) {
     throw std::runtime_error("Not found");
 }
 
-#endif // !DEBUG
+#endif

@@ -21,26 +21,37 @@ int main () {
     std::vector<int> ve;
 
     int random_value;
-    for (size_t i = 0; i < 10; i++) {
-      random_value = rand() % 10 + 1;
-      ve.push_back(random_value);
-    }
+    ve.push_back(10);
+    ve.push_back(20);
+    ve.push_back(30);
+    ve.push_back(40);
+    ve.push_back(50);
 
     it_end = ve.end();
 
     std::cout << "\n************ THE VALUES : *************\n" << std::endl;
-    for (it_begin = ve.begin(); it_begin != it_end; it_begin++) {
-      std::cout << "the value is : " << *it_begin << std::endl;
-    }
-    std::cout << "\n******* LET'S TEST EASYFIND() *********\n" << std::endl;
 
+    std::cout << "[the value is : ";
     for (it_begin = ve.begin(); it_begin != it_end; it_begin++) {
-      random_value = rand() % 10 + 1;
-      easyfind(ve, random_value);
+      std::cout << *it_begin;
+      if (it_begin + 1 != it_end) {
+        std::cout << ", ";
+      }
     }
+    std::cout << "]" << std::endl;
+
+    std::cout << "\n******* LET'S TEST EASYFIND() *********\n" << std::endl;
+    std::cout << "Enter a value : ";
+    std::cin >> random_value;
+    if (std::cin.fail()) {
+      std::cin.clear();
+      std::cout << "*That's not a valid integer!*" << std::endl;
+      return (1);
+    }
+    easyfind(ve, random_value);
   }
   catch (const std::exception& e) {
-    std::cout << "Error" << e.what() << std::endl;
+    std::cout << "*Caught exception : " << e.what() << "*" << std::endl;
   }
   return 0;
 }
