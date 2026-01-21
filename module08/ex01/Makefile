@@ -14,7 +14,7 @@ NAME = span
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp Span.cpp
+SRC = Span.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Colors

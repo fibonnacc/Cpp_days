@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/helfatih/Documents/c_plus/module08/ex01/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC = c++$/;"	m
+COLOR_CYAN	Makefile	/^COLOR_CYAN = \\033[36m$/;"	m
+COLOR_GREEN	Makefile	/^COLOR_GREEN = \\033[32m$/;"	m
+COLOR_PURPLE	Makefile	/^COLOR_PURPLE = \\033[35m$/;"	m
+COLOR_RESET	Makefile	/^COLOR_RESET = \\033[0m$/;"	m
+COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
+NAME	Makefile	/^NAME = span$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+SPAN_	Span.hpp	/^#define SPAN_$/;"	d
+SRC	Makefile	/^SRC = Span.cpp main.cpp$/;"	m
+Span	Span.cpp	/^Span::Span() {$/;"	f	class:Span
+Span	Span.cpp	/^Span::Span(const Span &other) : _size(0) {$/;"	f	class:Span
+Span	Span.cpp	/^Span::Span(unsigned int value) : _size(value) {$/;"	f	class:Span
+Span	Span.hpp	/^class Span {$/;"	c
+_size	Span.hpp	/^  unsigned int _size;$/;"	m	class:Span	typeref:typename:unsigned int
+addNumber	Span.cpp	/^void  Span::addNumber(int value) {$/;"	f	class:Span	typeref:typename:void
+addRange	Span.hpp	/^void  Span::addRange(T begin, T end) {$/;"	f	class:Span	typeref:typename:void
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+longestSpan	Span.cpp	/^unsigned int Span::longestSpan() {$/;"	f	class:Span	typeref:typename:unsigned int
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+operator =	Span.cpp	/^Span &Span::operator=(const Span &other) {$/;"	f	class:Span	typeref:typename:Span &
+re	Makefile	/^re: fclean all$/;"	t
+ret_vec	Span.hpp	/^  std::vector<int> ret_vec() {$/;"	f	class:Span	typeref:typename:std::vector<int>
+shortestSpan	Span.cpp	/^unsigned int Span::shortestSpan() {$/;"	f	class:Span	typeref:typename:unsigned int
+ve	Span.hpp	/^  std::vector<int> ve;$/;"	m	class:Span	typeref:typename:std::vector<int>
+~Span	Span.cpp	/^Span::~Span() {$/;"	f	class:Span

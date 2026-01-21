@@ -14,7 +14,7 @@ NAME = convert
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp 
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Colors

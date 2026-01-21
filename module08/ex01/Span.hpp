@@ -9,24 +9,13 @@ class Span {
 public:
 
   /************************/
-  /*   Methode Function   */
+  /*   methode function   */
   /************************/
   void  addNumber(int value);
+  template <typename T>
+  void  addRange(T begin, T end);
   unsigned int longestSpan();
   unsigned int shortestSpan();
-  //
-  // /************************/
-  // /*    Exception Class   */
-  // /************************/
-  // class SameValue : public std::exception {
-  // private:
-  //   std::string message;
-  // public:
-  //   SameValue();
-  //   SameValue(std::string str);
-  //   const char *what() const throw();
-  //   virtual ~SameValue() throw();
-  // };
 
   /************************/
   /*  Canonical Orthodox  */
@@ -41,5 +30,15 @@ private:
   std::vector<int> ve;
   unsigned int _size;
 };
+
+template <typename T>
+void  Span::addRange(T begin, T end) {
+
+  long distance = std::distance(begin, end);
+  if (this->ve.size() + distance > _size) {
+    throw std::runtime_error("No Space left in container!");
+  }
+  this->ve.insert(this->ve.end(), begin, end);
+}
 
 #endif // !DEBUG

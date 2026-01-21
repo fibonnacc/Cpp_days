@@ -2,7 +2,13 @@
 #include <algorithm>
 #include <list>
 
+
+/************************/
+/*   methode function   */
+/************************/
+
 unsigned int Span::longestSpan() {
+
   std::sort(ve.begin(), ve.end());
 
   std::vector<int>::iterator it_begin = this->ve.begin();
@@ -45,6 +51,9 @@ void  Span::addNumber(int value) {
   }
 }
 
+/************************/
+/*  Canonical Orthodox  */
+/************************/
 Span::Span() {
   _size = 0;
 }
@@ -52,7 +61,7 @@ Span::Span() {
 Span::Span(unsigned int value) : _size(value) {
 }
 
-Span::Span(const Span &other) {
+Span::Span(const Span &other) : _size(0) {
   *this = other;
 }
 

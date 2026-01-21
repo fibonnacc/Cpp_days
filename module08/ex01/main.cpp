@@ -1,21 +1,26 @@
 #include "Span.hpp"
 
+
 int main() {
   try {
-    Span sp = Span(8);
-    sp.addNumber(-10);
-    sp.addNumber(-5);
-    sp.addNumber(2);
-    sp.addNumber(6);
-    sp.addNumber(3);
-    sp.addNumber(17);
-    sp.addNumber(9);
-    sp.addNumber(11);
+    std::vector<int> ve;
+    for (size_t i = 0; i < 10; i++) {
+      ve.push_back(i + 1);
+    }
 
-    // Sorted: -10, -5, 2
-    // Gaps: 5 and 7
-    std::cout << sp.shortestSpan() << std::endl; // Should be 5
-    std::cout << sp.longestSpan() << std::endl;   // Should be 12
+    std::vector<int>::iterator it_b = ve.begin();
+    std::vector<int>::iterator it_e = ve.end();
+
+    for (/*empty*/; it_b != it_e; it_b++) {
+      std::cout << "the value : " << *it_b << std::endl;
+    }
+
+    Span sp(10000);
+    sp.addRange(it_b, it_e);
+
+    std::cout << "the shortest : " << sp.shortestSpan() << std::endl;
+    std::cout << "the longest : " << sp.longestSpan() << std::endl;
+
   }
 
   catch (std::exception &e) {
