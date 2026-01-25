@@ -71,6 +71,7 @@ Span::Span() {
 }
 
 Span::Span(unsigned int value) : _size(value) {
+  this->ve.reserve(value);
 }
 
 Span::Span(const Span &other) : _size(0) {

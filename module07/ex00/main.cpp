@@ -6,7 +6,7 @@
 /*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:48:48 by helfatih          #+#    #+#             */
-/*   Updated: 2026/01/19 13:17:16 by helfatih         ###   ########.fr       */
+/*   Updated: 2026/01/22 21:46:30 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "whatever.hpp"
 
 int main( void ) {
-  int a = 2;
-  int b = 3;
+  int a = 3;
+  int b = 3.14;
   ::swap( a, b );
   std::cout << "a = " << a << ", b = " << b << std::endl;
   std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;

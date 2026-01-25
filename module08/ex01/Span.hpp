@@ -53,4 +53,4 @@ void  Span::addRange(T begin, T end) {
   this->ve.insert(this->ve.end(), begin, end);
 }
 
-#endif // !DEBUG
+#endif

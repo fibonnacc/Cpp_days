@@ -4,7 +4,7 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/hicham/desktop/c_plus_plus/module09/	//
+!_TAG_PROC_CWD	/home/helfatih/Documents/c_plus/module09/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
@@ -22,14 +22,14 @@ NAME	Makefile	/^NAME = btc$/;"	m
 OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
 ParseInput	BitcoinExchange.cpp	/^void Parsser::ParseInput() {$/;"	f	class:Parsser	typeref:typename:void
 Parsser	BitcoinExchange.hpp	/^struct Parsser {$/;"	s
-Print_list	main.cpp	/^void  Print_list(Parsser& Boss) {$/;"	f	typeref:typename:void
+Print_list	main.cpp	/^void Parsser::Print_list(Parsser& Boss) {$/;"	f	class:Parsser	typeref:typename:void
 ReadFromFile	BitcoinExchange.cpp	/^void  Parsser::ReadFromFile(char *str, Parsser& SomeOne) {$/;"	f	class:Parsser	typeref:typename:void
 SRC	Makefile	/^SRC = main.cpp BitcoinExchange.cpp$/;"	m
 StoreInput	BitcoinExchange.cpp	/^void Parsser::StoreInput(std::string &str) {$/;"	f	class:Parsser	typeref:typename:void
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
-getter	BitcoinExchange.cpp	/^std::list<char *> Parsser::getter() {$/;"	f	class:Parsser	typeref:typename:std::list<char * >
-lst	BitcoinExchange.hpp	/^    std::list<std::string> lst;$/;"	m	struct:Parsser	typeref:typename:std::list<std::string>
+getter	BitcoinExchange.cpp	/^std::map<std::string, double> Parsser::getter() {$/;"	f	class:Parsser	typeref:typename:std::map<std::string,double>
+lst	BitcoinExchange.hpp	/^    std::map<std::string, double> lst;$/;"	m	struct:Parsser	typeref:typename:std::map<std::string,double>
 main	main.cpp	/^int main (int ac, char *argv[]) {$/;"	f	typeref:typename:int
 re	Makefile	/^re: fclean all$/;"	t
