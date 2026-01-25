@@ -5,13 +5,18 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
+#include <map>
 
 struct Parsser {
   private:
-    std::list<std::string> lst;
+    std::map<std::string, double> lst;
   public:
-    void  StoreInput();
-    void  ParseInput();
+    static void  Print_list(Parsser& Boss);
+    std::map<std::string, double> getter();
+    static void  ReadFromFile(char *str, Parsser& SomeOne);
+    void  StoreInput(std::string &str);
+    static void  ParseInput();
 };
 
 #endif // !DEBUG

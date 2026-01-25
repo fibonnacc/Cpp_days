@@ -1,0 +1,35 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/hicham/desktop/c_plus_plus/module09/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+BITCOINEXCHANGE	BitcoinExchange.hpp	/^#define BITCOINEXCHANGE$/;"	d
+CC	Makefile	/^CC = c++$/;"	m
+COLOR_CYAN	Makefile	/^COLOR_CYAN = \\033[36m$/;"	m
+COLOR_GREEN	Makefile	/^COLOR_GREEN = \\033[32m$/;"	m
+COLOR_PURPLE	Makefile	/^COLOR_PURPLE = \\033[35m$/;"	m
+COLOR_RESET	Makefile	/^COLOR_RESET = \\033[0m$/;"	m
+COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
+NAME	Makefile	/^NAME = btc$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+ParseInput	BitcoinExchange.cpp	/^void Parsser::ParseInput() {$/;"	f	class:Parsser	typeref:typename:void
+Parsser	BitcoinExchange.hpp	/^struct Parsser {$/;"	s
+Print_list	main.cpp	/^void  Print_list(Parsser& Boss) {$/;"	f	typeref:typename:void
+ReadFromFile	BitcoinExchange.cpp	/^void  Parsser::ReadFromFile(char *str, Parsser& SomeOne) {$/;"	f	class:Parsser	typeref:typename:void
+SRC	Makefile	/^SRC = main.cpp BitcoinExchange.cpp$/;"	m
+StoreInput	BitcoinExchange.cpp	/^void Parsser::StoreInput(std::string &str) {$/;"	f	class:Parsser	typeref:typename:void
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+getter	BitcoinExchange.cpp	/^std::list<char *> Parsser::getter() {$/;"	f	class:Parsser	typeref:typename:std::list<char * >
+lst	BitcoinExchange.hpp	/^    std::list<std::string> lst;$/;"	m	struct:Parsser	typeref:typename:std::list<std::string>
+main	main.cpp	/^int main (int ac, char *argv[]) {$/;"	f	typeref:typename:int
+re	Makefile	/^re: fclean all$/;"	t
