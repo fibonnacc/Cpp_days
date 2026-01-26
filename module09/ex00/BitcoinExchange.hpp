@@ -23,6 +23,8 @@ public:
   static void OpenCsvFile(Parsser &Boss);
   static void  split_data(std::string& line, Parsser& Boss);
   static void  read_and_store(Parsser &Boss, std::ifstream& Input);
+  static void  parse_right_left(std::string& str, const int i);
+  void  ExchangeBitcoin(std::map<std::string, double> &maps);
 };
 
 #endif // !DEBUG

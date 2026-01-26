@@ -14,7 +14,7 @@ NAME = btc
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp BitcoinExchange.cpp
+SRC = main.cpp BitcoinExchange.cpp Data_file.cpp File_input.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Colors

@@ -14,12 +14,12 @@
 
 int main () {
   char arr[] = {'a', 'b', 'c'};
-  iter(arr, 3, print<const char>);
+  iter(arr, 3, print_<const char>);
 
   std::cout << "\n*********************\n" << std::endl;
 
   char arr1[] = {'1', '2', '3'};
-  iter(arr1, 3, print<char>);
+  iter(arr1, 3, print_<char>);
   (void)arr;
   (void)arr1;
   return 0;

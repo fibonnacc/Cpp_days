@@ -20,23 +20,23 @@ COLOR_RESET	Makefile	/^COLOR_RESET = \\033[0m$/;"	m
 COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
 NAME	Makefile	/^NAME = btc$/;"	m
 OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
-OpenCsvFile	BitcoinExchange.cpp	/^void Parsser::OpenCsvFile(Parsser &Boss) {$/;"	f	class:Parsser	typeref:typename:void
+OpenCsvFile	Data_file.cpp	/^void Parsser::OpenCsvFile(Parsser &Boss) {$/;"	f	class:Parsser	typeref:typename:void
 ParseInput	BitcoinExchange.cpp	/^void Parsser::ParseInput() {$/;"	f	class:Parsser	typeref:typename:void
 Parsser	BitcoinExchange.hpp	/^struct Parsser {$/;"	s
 Print_	BitcoinExchange.cpp	/^void Print_(std::map<std::string, double> &map) {$/;"	f	typeref:typename:void
 Print_list	main.cpp	/^void Parsser::Print_list(std::map<std::string, double> &map) {$/;"	f	class:Parsser	typeref:typename:void
-ReadFromFile	BitcoinExchange.cpp	/^void  Parsser::ReadFromFile(char *str, Parsser& SomeOne) {$/;"	f	class:Parsser	typeref:typename:void
-SRC	Makefile	/^SRC = main.cpp BitcoinExchange.cpp$/;"	m
-StoreInput	BitcoinExchange.cpp	/^void Parsser::StoreInput(std::string &str) {$/;"	f	class:Parsser	typeref:typename:void
+ReadFromFile	File_input.cpp	/^void  Parsser::ReadFromFile(char *str, Parsser& SomeOne) {$/;"	f	class:Parsser	typeref:typename:void
+SRC	Makefile	/^SRC = main.cpp BitcoinExchange.cpp Data_file.cpp File_input.cpp$/;"	m
+StoreInput	File_input.cpp	/^void Parsser::StoreInput(std::string &str) {$/;"	f	class:Parsser	typeref:typename:void
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
 fclean	Makefile	/^fclean: clean$/;"	t
 getter	BitcoinExchange.cpp	/^std::map<std::string, double> Parsser::getter() {$/;"	f	class:Parsser	typeref:typename:std::map<std::string,double>
 lst	BitcoinExchange.hpp	/^  std::map<std::string, double> lst;$/;"	m	struct:Parsser	typeref:typename:std::map<std::string,double>
 main	main.cpp	/^int main (int ac, char *argv[]) {$/;"	f	typeref:typename:int
-parse_left_part	BitcoinExchange.cpp	/^void  parse_left_part(std::string& str) {$/;"	f	typeref:typename:void
+parse_right_left	File_input.cpp	/^void  Parsser::parse_right_left(std::string& str) {$/;"	f	class:Parsser	typeref:typename:void
 print_vector	BitcoinExchange.cpp	/^void  print_vector(std::vector<std::string> vec) {$/;"	f	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
-read_and_store	BitcoinExchange.cpp	/^void  Parsser::read_and_store(Parsser &Boss, std::ifstream& Input) {$/;"	f	class:Parsser	typeref:typename:void
-split	BitcoinExchange.cpp	/^std::vector<std::string> split(const std::string& s) {$/;"	f	typeref:typename:std::vector<std::string>
+read_and_store	Data_file.cpp	/^void  Parsser::read_and_store(Parsser &Boss, std::ifstream& Input) {$/;"	f	class:Parsser	typeref:typename:void
+split	File_input.cpp	/^std::vector<std::string> split(const std::string& s) {$/;"	f	typeref:typename:std::vector<std::string>
 split_data	BitcoinExchange.cpp	/^void  Parsser::split_data(std::string& line, Parsser& Boss) {$/;"	f	class:Parsser	typeref:typename:void
