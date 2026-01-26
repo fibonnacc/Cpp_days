@@ -90,25 +90,40 @@ void  parse_left_part(std::string& str) {
   for (; it_b != it_e; it_b++) {
     std::string value = *it_b;
     for (size_t i = 0; i < value.size() ; i++) {
-      std::cout << value[i];
+      if (!std::isdigit(value[i])) {
+        throw std::runtime_error("Something goes wrong");
+        break;
+      }
     }
-    std::cout << std::endl;
   }
   print_vector(tokens);
 }
 
 void Parsser::StoreInput(std::string &str) {
-  size_t begin = 0;
-  size_t end = 0;
-
+  std::stringstream tokenStream(str);
+  std::string leftPart;
+  std::string rightPart;
   std::map<std::string, double> maps;
 
-  end = str.find('|', begin);
-  if (end == std::string::npos) {
+  if (str.find('|', 0) == std::string::npos) {
     throw std::runtime_error("Missing delimiter '|' in input line: " + str);
   }
 
-  std::string leftPart = str.substr(begin, end - begin);
+  for (size_t i = 0; i < 2; i++) {
+    if (i % 2 == 0) {
+      if (!std::getline(tokenStream, leftPart, '|'))
+        throw std::runtime_error("getline fails");
+    }
+    else if (i % 2) {
+      if (!std::getline(tokenStream, rightPart, '|'))
+        throw std::runtime_error("getline fails");
+    }
+  }
+  if (leftPart[leftPart.length() - 1] == ' ') {
+    leftPart.erase(leftPart.length() - 1, 1);
+  }
+  maps[leftPart] = std::strtod(rightPart.c_str(), NULL);
+  // Parsser::Print_list(maps);
   try {
     parse_left_part(leftPart);
   }
@@ -116,13 +131,12 @@ void Parsser::StoreInput(std::string &str) {
     std::cout << "Error : " << e.what() << std::endl;
   }
 
-  begin = end + 2;
-
-  std::string rightPart = str.substr(begin);
-
-  double value = std::strtod(rightPart.c_str(), NULL);
-  maps[leftPart] = value;
-  // Parsser::Print_list(maps);
+  // begin = end + 2;
+  //
+  // std::string rightPart = str.substr(begin);
+  //
+  // double value = std::strtod(rightPart.c_str(), NULL);
+  // maps[leftPart] = value;
 }
 
 void  Parsser::ReadFromFile(char *str, Parsser& SomeOne) {
