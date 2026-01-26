@@ -33,7 +33,7 @@ void  Parsser::read_and_store(Parsser &Boss, std::ifstream& Input) {
   std::string line;
   if (std::getline(Input, line)) {
     if (line != "date,exchange_rate") {
-      throw std::runtime_error("Something change in file");
+      throw std::runtime_error("File has no Title");
     }
   }
   while (1) {
@@ -42,7 +42,7 @@ void  Parsser::read_and_store(Parsser &Boss, std::ifstream& Input) {
     }
     Parsser::split_data(line, Boss);
   }
-  Print_(Boss.lst);
+  // Print_(Boss.lst);
 }
 
 void Parsser::OpenCsvFile(Parsser &Boss) {
@@ -53,8 +53,48 @@ void Parsser::OpenCsvFile(Parsser &Boss) {
     }
     Parsser::read_and_store(Boss, Input);
   }
-  catch (const std::exception&) {
+  catch (const std::exception& e) {
+    std::cout << "Error : " << e.what() << std::endl;
   }
+}
+
+void  print_vector(std::vector<std::string> vec) {
+  std::vector<std::string>::iterator it_b = vec.begin();
+  std::vector<std::string>::iterator it_e = vec.end();
+
+  for (; it_b != it_e; it_b++) {
+    std::cout << "[" << *it_b << "]" << "->";
+  }
+  std::cout << "NULL" << std::endl;
+}
+
+std::vector<std::string> split(const std::string& s) {
+  std::vector<std::string> tokens;
+  std::string token;
+  std::stringstream tokenStream(s);
+
+  while (std::getline(tokenStream, token, '-')) {
+    tokens.push_back(token);
+  }
+  return tokens;
+}
+
+void  parse_left_part(std::string& str) {
+  // 2011-01-03
+  std::vector<std::string> tokens = split(str);
+
+  // parse the token 
+  std::vector<std::string>::iterator it_b = tokens.begin();
+  std::vector<std::string>::iterator it_e = tokens.end();
+
+  for (; it_b != it_e; it_b++) {
+    std::string value = *it_b;
+    for (size_t i = 0; i < value.size() ; i++) {
+      std::cout << value[i];
+    }
+    std::cout << std::endl;
+  }
+  print_vector(tokens);
 }
 
 void Parsser::StoreInput(std::string &str) {
@@ -69,6 +109,12 @@ void Parsser::StoreInput(std::string &str) {
   }
 
   std::string leftPart = str.substr(begin, end - begin);
+  try {
+    parse_left_part(leftPart);
+  }
+  catch (const std::exception& e) {
+    std::cout << "Error : " << e.what() << std::endl;
+  }
 
   begin = end + 2;
 
@@ -76,7 +122,7 @@ void Parsser::StoreInput(std::string &str) {
 
   double value = std::strtod(rightPart.c_str(), NULL);
   maps[leftPart] = value;
-  Parsser::Print_list(maps);
+  // Parsser::Print_list(maps);
 }
 
 void  Parsser::ReadFromFile(char *str, Parsser& SomeOne) {

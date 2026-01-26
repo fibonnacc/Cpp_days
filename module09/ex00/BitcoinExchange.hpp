@@ -6,6 +6,9 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <vector>
+#include <string>
+#include <sstream>
 #include <map>
 
 struct Parsser {
