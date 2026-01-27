@@ -1,5 +1,14 @@
 #include "BitcoinExchange.hpp"
 
+void Print_(std::map<std::string, double> &map) {
+  std::map<std::string, double>::iterator it_b = map.begin();
+  std::map<std::string, double>::iterator it_e = map.end();
+
+  for (; it_b != it_e; it_b++) {
+    std::cout << std::fixed << "[" << it_b->first << "]" << "->" << "[" << it_b->second << "]" << std::endl;
+  }
+}
+
 void  Parsser::read_and_store(Parsser &Boss, std::ifstream& Input) {
   std::string line;
   if (std::getline(Input, line)) {

@@ -6,12 +6,20 @@ std::vector<std::string> split(const std::string& s, const int i) {
   std::stringstream tokenStream(s);
   int value = 0;
 
-  while (std::getline(tokenStream, token, '-')) {
-    value++;
-    tokens.push_back(token);
+  if (i == 3) {
+    while (std::getline(tokenStream, token, '-')) {
+      value++;
+      tokens.push_back(token);
+    }
+    if (value != i) {
+      throw std::runtime_error("Bad input : Year-Month-Day");
+    }
   }
-  if (value != i) {
-    throw std::runtime_error("Invalid Token");
+  else if (i == 1) {
+    if (!std::getline(tokenStream, token)) {
+      throw std::runtime_error("getline failed");
+    }
+    tokens.push_back(token);
   }
   return tokens;
 }
@@ -25,6 +33,16 @@ void  print_vector(std::vector<std::string> vec) {
   }
 }
 
+void isMoreThanIntMax(std::string &str) {
+  double value = strtod(str.c_str(), NULL);
+  if (value > INT_MAX) {
+    throw std::runtime_error("too large a number");
+  }
+  if (value < 0) {
+    throw std::runtime_error("Not a positive number");
+  }
+}
+
 bool isFloat(const std::string& str) {
   char* ptr;
   std::strtod(str.c_str(), &ptr);
@@ -32,30 +50,28 @@ bool isFloat(const std::string& str) {
 }
 
 void  Parsser::parse_right_left(std::string& str, const int i) {
-  // 2011-01-03
   std::vector<std::string> tokens = split(str, i);
 
-  // parse the token 
   std::vector<std::string>::iterator it_b = tokens.begin();
   std::vector<std::string>::iterator it_e = tokens.end();
 
   for (; it_b != it_e; it_b++) {
     std::string value = *it_b;
     if (value[0] == '\0')
-      throw std::runtime_error("Token not valide => '" + value + "'");
+      throw std::runtime_error("Bad input => '" + value + "'");
     for (size_t i = 0; i < value.size() ; i++) {
+      isMoreThanIntMax(value);
       if (!std::isdigit(value[i]) && !isFloat(value)) {
-        throw std::runtime_error("Token not valide => '" + value + "'");
+        throw std::runtime_error("Bad input => '" + value + "'");
       }
     }
   }
-  print_vector(tokens);
 }
 
 void  Parsser::ExchangeBitcoin(std::map<std::string, double> &maps)
 {
-    std::map<std::string, double>::iterator it_b1 = maps.begin();
-    std::map<std::string, double>::iterator it_e1 = maps.end();
+  std::map<std::string, double>::iterator it_b1 = maps.begin();
+  std::map<std::string, double>::iterator it_e1 = maps.end();
 
   for (; it_b1 != it_e1; it_b1++) {
     std::string key1 = it_b1->first;
@@ -63,13 +79,20 @@ void  Parsser::ExchangeBitcoin(std::map<std::string, double> &maps)
     std::map<std::string, double>::iterator it_b2 = this->lst.begin();
     std::map<std::string, double>::iterator it_e2 = this->lst.end();
     for (; it_b2 != it_e2; it_b2++) {
-      if (key1 <= it_b2->first) {
-        it_b1->second * it_b2->second;
+      if (key1 == it_b2->first) {
+        std::cout  << it_b1->second * it_b2->second << std::endl;
+        break;
+      }
+      else if (key1 < it_b2->first) {
+        --it_b2;
+        std::cout  << it_b1->second * it_b2->second << std::endl;
+        break;
       }
     }
+    if (it_b2 == it_e2) {
+      std::cout  << it_b1->second * it_e2->second << std::endl;
+    }
   }
-  // for (size_t i = 0; i < this->lst.size(); i++) {
-  // }
 }
 
 void Parsser::StoreInput(std::string &str) {
@@ -89,7 +112,7 @@ void Parsser::StoreInput(std::string &str) {
         throw std::runtime_error("getline fails");
     }
     else if (i % 2) {
-      if (!std::getline(tokenStream, rightPart, '|'))
+      if (!std::getline(tokenStream, rightPart))
         throw std::runtime_error("getline fails");
     }
   }
@@ -103,10 +126,10 @@ void Parsser::StoreInput(std::string &str) {
   rightPart.erase(0, 1);
   try {
     Parsser::parse_right_left(leftPart, 3);
-    std::cout << " ===> ";
     Parsser::parse_right_left(rightPart, 1);
-    std::cout << std::endl;
     maps[leftPart] = std::strtod(rightPart.c_str(), NULL);
+
+    std::cout << leftPart << " => " << rightPart << " = ";
     ExchangeBitcoin(maps);
   }
   catch (const std::exception& e) {
