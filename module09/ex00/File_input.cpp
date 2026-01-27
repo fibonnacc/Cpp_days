@@ -35,7 +35,7 @@ void  print_vector(std::vector<std::string> vec) {
 
 void isMoreThanIntMax(std::string &str) {
   double value = strtod(str.c_str(), NULL);
-  if (value > INT_MAX) {
+  if (value > 1000) {
     throw std::runtime_error("too large a number");
   }
   if (value < 0) {

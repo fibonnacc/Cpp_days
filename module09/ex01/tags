@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/helfatih/Documents/c_plus/module09/ex01/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CC	Makefile	/^CC = c++$/;"	m
+COLOR_CYAN	Makefile	/^COLOR_CYAN = \\033[36m$/;"	m
+COLOR_GREEN	Makefile	/^COLOR_GREEN = \\033[32m$/;"	m
+COLOR_PURPLE	Makefile	/^COLOR_PURPLE = \\033[35m$/;"	m
+COLOR_RESET	Makefile	/^COLOR_RESET = \\033[0m$/;"	m
+COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
+MakeToken	RPN.cpp	/^void  RPN::MakeToken(char *av) {$/;"	f	class:RPN	typeref:typename:void
+NAME	Makefile	/^NAME = RPN$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.cpp=.o)$/;"	m
+RPN	RPN.cpp	/^RPN::RPN() {$/;"	f	class:RPN
+RPN	RPN.cpp	/^RPN::RPN(const RPN &src) {$/;"	f	class:RPN
+RPN	RPN.hpp	/^class RPN {$/;"	c
+RPN_HPP	RPN.hpp	/^#define RPN_HPP$/;"	d
+SRC	Makefile	/^SRC = main.cpp RPN.cpp$/;"	m
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+isOperator	RPN.cpp	/^bool  RPN::isOperator(char c) {$/;"	f	class:RPN	typeref:typename:bool
+lst	RPN.hpp	/^  std::list<std::string>  lst;$/;"	m	class:RPN	typeref:typename:std::list<std::string>
+main	main.cpp	/^int main (int argc, char *argv[]) {$/;"	f	typeref:typename:int
+operator =	RPN.cpp	/^RPN &RPN::operator=(const RPN &src) {$/;"	f	class:RPN	typeref:typename:RPN &
+print_list	RPN.cpp	/^void  print_list(std::list<std::string>& lst) {$/;"	f	typeref:typename:void
+re	Makefile	/^re: fclean all$/;"	t
+validate	RPN.cpp	/^void  RPN::validate() {$/;"	f	class:RPN	typeref:typename:void
+~RPN	RPN.cpp	/^RPN::~RPN() {$/;"	f	class:RPN
