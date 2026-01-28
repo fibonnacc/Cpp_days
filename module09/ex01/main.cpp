@@ -19,6 +19,7 @@ int main (int argc, char *argv[]) {
       throw std::runtime_error("Expect two argument!");
     }
     calculator.MakeToken(argv[1]);
+    calculator.reversePolishNotation();
   }
   catch (const std::exception& e) {
     std::cout << "Error : " << e.what() << std::endl;

@@ -27,12 +27,15 @@ RPN_HPP	RPN.hpp	/^#define RPN_HPP$/;"	d
 SRC	Makefile	/^SRC = main.cpp RPN.cpp$/;"	m
 all	Makefile	/^all: $(NAME)$/;"	t
 clean	Makefile	/^clean:$/;"	t
+doCalculation	RPN.cpp	/^int RPN::doCalculation(int a, int b, char op) {$/;"	f	class:RPN	typeref:typename:int
 fclean	Makefile	/^fclean: clean$/;"	t
+i	RPN.cpp	/^int i = 0;$/;"	v	typeref:typename:int
 isOperator	RPN.cpp	/^bool  RPN::isOperator(char c) {$/;"	f	class:RPN	typeref:typename:bool
 lst	RPN.hpp	/^  std::list<std::string>  lst;$/;"	m	class:RPN	typeref:typename:std::list<std::string>
 main	main.cpp	/^int main (int argc, char *argv[]) {$/;"	f	typeref:typename:int
 operator =	RPN.cpp	/^RPN &RPN::operator=(const RPN &src) {$/;"	f	class:RPN	typeref:typename:RPN &
 print_list	RPN.cpp	/^void  print_list(std::list<std::string>& lst) {$/;"	f	typeref:typename:void
 re	Makefile	/^re: fclean all$/;"	t
+reversePolishNotation	RPN.cpp	/^void RPN::reversePolishNotation() {$/;"	f	class:RPN	typeref:typename:void
 validate	RPN.cpp	/^void  RPN::validate() {$/;"	f	class:RPN	typeref:typename:void
 ~RPN	RPN.cpp	/^RPN::~RPN() {$/;"	f	class:RPN

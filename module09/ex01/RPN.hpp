@@ -23,6 +23,9 @@ public:
   void  MakeToken(char *av);
   void  validate();
   bool  isOperator(char c);
+  void  reversePolishNotation();
+  int   doCalculation(int a, int b, char op);
+  // bool checkOrder(char c, bool &d);
   RPN();
   RPN(const RPN &src);
   RPN &operator=(const RPN &src);
