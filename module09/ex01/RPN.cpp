@@ -78,10 +78,12 @@ void RPN::reversePolishNotation() {
   for (std::list<std::string>::iterator it_b = this->lst.begin(); it_b != this->lst.end(); it_b++) {
     std::string token = *it_b;
 
-    if (std::isdigit(token[0])) {
+    if (std::isdigit(token[0]))
+    {
       linked_list.push_front(token[0] - '0');
     }
-    else if (isOperator(token[0])) {
+    else if (isOperator(token[0]))
+    {
       if (linked_list.size() < 2) {
         throw std::runtime_error("bad input");
       }

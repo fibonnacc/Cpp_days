@@ -5,28 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: helfatih <helfatih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 14:58:18 by helfatih          #+#    #+#             */
-/*   Updated: 2026/02/02 14:58:19 by helfatih         ###   ########.fr       */
+/*   Created: 2026/02/02 16:43:27 by helfatih          #+#    #+#             */
+/*   Updated: 2026/02/02 18:17:53 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
 
-int main(int ac, char *argv[])
-{
-	try
-	{
-		if (ac != 2)
-		{
-			throw std::runtime_error("Expect two argument!");
-		}
-		Parsser Boss;
-		Parsser::OpenCsvFile(Boss);
-		Parsser::ReadFromFile(argv[1], Boss);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Error : " << e.what() << std::endl;
-	}
-	return 0;
+int main (int ac, char *av[]) {
+
+  PmergeMe obj;
+  try {
+    if (ac == 1) {
+      std::runtime_error("Expect more than one argument");
+    }
+    obj.parseArgument(ac, av);
+  }
+  catch (const std::exception& e) {
+    std::cout << "Error : " << e.what() << std::endl;
+  }
+  return 0;
 }

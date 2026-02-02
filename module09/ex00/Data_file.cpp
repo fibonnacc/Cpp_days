@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Data_file.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: helfatih <helfatih@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/02 14:58:45 by helfatih          #+#    #+#             */
+/*   Updated: 2026/02/02 14:58:46 by helfatih         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 void Print_(std::map<std::string, double> &map) {
@@ -22,7 +34,6 @@ void  Parsser::read_and_store(Parsser &Boss, std::ifstream& Input) {
     }
     Parsser::split_data(line, Boss);
   }
-  // Print_(Boss.lst);
 }
 
 void Parsser::OpenCsvFile(Parsser &Boss) {
