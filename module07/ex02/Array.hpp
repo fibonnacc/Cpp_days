@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
+/*   By: helfatih <helfatih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 11:37:44 by helfatih          #+#    #+#             */
-/*   Updated: 2026/01/17 11:37:44 by helfatih         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:05:37 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY
-
 #define ARRAY
 
 #include <iostream>
@@ -81,6 +80,8 @@ Array<T>::~Array() {
 
 template <typename T>
 T& Array<T>::operator[](unsigned int index) {
+  if (index < 0)
+    throw std::out_of_range("Index out of bounds");
   if (index >= _size) {
     throw std::out_of_range("Index out of bounds");
   }
@@ -89,7 +90,10 @@ T& Array<T>::operator[](unsigned int index) {
 
 template <typename T>
 const T& Array<T>::operator[](unsigned int index) const {
+  if (index < 0)
+    throw std::out_of_range("Index out of bounds");
   if (index >= _size) {
+    std::cout << "Index : " << index << std::endl;
     throw std::out_of_range("Index out of bounds");
   }
   return _element[index];

@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
+/*   By: helfatih <helfatih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:48:48 by helfatih          #+#    #+#             */
-/*   Updated: 2026/01/22 21:46:30 by helfatih         ###   ########.fr       */
+/*   Updated: 2026/02/03 09:23:16 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "whatever.hpp"
 
 int main( void ) {
